@@ -1,0 +1,61 @@
+<include file="include/head" />
+<style>
+#category-list .item {border-bottom: 1px solid #e0e0e0 ;position:relative;}
+#category-list .item:after{content: '';display: inline-block;width: 8px; height: 8px;position: absolute;right: 8px;top: 40%;border-right: 1px solid #bfbfbf;border-top: 1px solid #bfbfbf;-webkit-transform: rotate(45deg);}
+#category-list .hd {padding: 5px 0;background: #fff;height:40px;line-height:40px;}
+#category-list .hd img {margin: 0 0 0 20px;width:30px; height:30px;display: block;}
+#category-list .hd strong {font-size: 14px;color: #333;font-weight: normal;}
+#category-list .hd i{background:#F00; color:#Fff; font-size:0.3rem; padding:0 2px; position:absolute; right:-30px; top:0px; height:30px; line-height:30px; display:block}
+#category-list .hd .text {margin-top:0;text-align:left; padding-left:15px;height:30px;line-height:30px;position:relative;overflow:initial;background: #fff;}
+div {display: block;}
+
+</style>    
+	<include file="include/header"  title="商品分类" />
+	<foreach name="cates" item="v" key="k">
+	
+	<div id="category-list" class="item-list" <if condition="$k eq 0">style="margin-top: 42px;" </if>>
+		<if condition="$v['_child']">
+			<div class="item">
+				<a href="javascript:;" onclick="showItem(this);">
+					<div class="hd"> 
+						<img src="{$v['pic']}" alt="{$v['name']}">
+						<div class="text"> <strong>{$v['name']}</strong></div>
+					</div>
+				</a>
+			</div>
+			<foreach name="v['_child']" item="val">
+			<div class="item" style="padding-left:10%;display:none;">
+				<a href="{:U('Index/all',array('cate_id'=>$val['id']))}">
+					<div class="hd"> 
+						<img src="{$val['pic']}" alt="{$val['name']}">
+						<div class="text"> <strong>{$val['name']}</strong></div>
+					</div>
+				</a>
+			</div>
+			</foreach>
+		<else />
+			<div class="item">
+				<a href="{:U('Index/all',array('cate_id'=>$v['id']))}">
+					<div class="hd"> 
+						<img src="{$v['pic']}" alt="{$v['name']}">
+						<div class="text"> <strong>{$v['name']}</strong></div>
+					</div>
+				</a>
+			</div>
+		</if>
+	</div>
+	
+	</foreach>
+	
+	<div class="mask" id="loading">
+		<img src="__PUBLIC__/m/images/loading-grey.gif" style="position: fixed;_position:absolute;margin-left:-20px;left:50%;top:45%;">
+	</div>
+	
+<include file="include/footer" />
+<script>
+	function showItem(ob){
+		$(ob).parent().siblings().toggle();
+	}
+</script>
+</body>
+</html>

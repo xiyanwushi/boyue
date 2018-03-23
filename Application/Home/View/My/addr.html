@@ -1,0 +1,105 @@
+<include file="include/head" />
+<script>
+$(function(){
+	//初始化缩小html的size
+	$('html').css('font-size','15px');
+});
+</script>
+<link href="__PUBLIC__/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/plugins/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/css/store.css?2016" rel="stylesheet" type="text/css" />
+<style>
+.header{ background:#000; color:#666666; box-shadow:none;}
+.header a{ color:inherit;}
+.footer{ border-top:1px solid #ddd}
+.cart-checkbox {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    background: url(./Public/m/images/shoppingcart.png) no-repeat 0px 1px;
+    background-size: 50px 200px;
+	top: 5px!important;
+	right:0px!important;
+}
+</style>
+<div class="header-blank"></div>
+<div class="header">
+	收货地址
+	<span class="left">
+		<a href="javascript:;" onclick="window.history.go(-1)"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
+	</span>
+</div>
+
+<div class="addr-main">
+	<div class="addr-add">
+		<a href="{:U('My/addr_add?act='.$_GET['act'])}" style="font-size:16px;">
+			添加新地址
+		</a>
+	</div>
+	<volist name="list" id="vo">
+	<div class="addr-item" style="padding: 0;">
+		<div style="width:25px;height:25px;position:absolute;top: 10%;right: 3%;" onclick="del({$vo['id']});">
+			<span class="cart-checkbox"></span>
+		</div>
+		<if condition="$vo['is_default'] eq 1">
+			<div style="width:20px;height:20px;position:absolute;top: 10%;left: 2%;"><img style="width:100%;" src="__PUBLIC__/images/l_2.png" /></div>
+		<else />
+			<div style="width:22px;height:22px;position:absolute;top: 10%;left: 2%;" onclick="defaultAddr({$vo['id']});">
+				<img alt="设置默认" style="width:100%;" src="__PUBLIC__/images/ok.png" />
+			</div>
+		</if>
+		{//如果是选择地址点击则跳转回购物车，否则设置为默认地址}
+		<div style="width: 70%;margin-left: 12%;line-height: px;margin-top: 10px;margin-bottom: 10px;">
+		<a href="<if condition="$_GET['act'] eq 'select'">{:U('Index/cart?addr='.$vo['id'])}<else/>{:U('Index/addr?default='.$vo['id'])}</if>">
+			{$vo.name}({$vo.mobile})<br/>
+			{:str_replace('||',' ', $vo['district'])}{$vo.addr}
+		</a>
+		</div>
+	</div>
+	</volist>
+</div>
+<script>
+	function del(id){
+		layer.confirm('确定要删除吗？', {btn: ['确定','取消']}, function(){
+			Ajax("{:U('My/delAddr')}",{id:id,act:"{$_GET['act']}"});
+		})
+	}
+	
+	function defaultAddr(id){
+		layer.confirm('设置默认？', {btn: ['确定','取消']}, function(){
+			Ajax("{:U('My/default_addr')}",{id:id,act:"{$_GET['act']}"});
+		});
+	}
+	
+	function Ajax(url,data){
+		layer.msg('加载中', {
+		  icon: 16,
+		  shade: 0.5
+		});
+		if(url){
+			layer.closeAll();
+			$.post(url,data,function(d){
+				if(d){
+					console.log(d);
+					if(d.status){
+						layer.msg(d.info);
+						if(d.url){
+							setTimeout(function(){
+								location.href=d.url;
+								layer.closeAll();
+							}, 2000);
+						}
+					}else{
+						layer.msg(d.info);
+					}
+				}else{
+					layer.msg('网络异常');
+				}
+			});
+		}
+	}
+</script>
+<include file="include/footer" />
+</body>
+</html>

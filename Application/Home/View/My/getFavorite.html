@@ -1,0 +1,29 @@
+<if condition="$list">
+<foreach name="list" item="v">
+<li>
+	<div class="ol-l">
+		<a href="{:U('Index/product',array('id'=>$v['product']))}" class="toDetail">
+			<img src="{$v['pic']}">
+		</a>
+	</div>
+	<div class="ol-r">
+		<h3><a href="{:U('Index/product',array('id'=>$v['product']))}" class="toDetail">{$v['title']}</a></h3>
+		<p class="r-price">
+			 关注时间:{$v['create_time']|date="Y-m-d H:i:s",###}
+			<br>
+		<span class="r-red">￥{$v['price']}</span>
+		</p>
+		<p class="r-btn">
+			<a href="javascript:;" onclick="Favorite({$v['product_id']})" class="c-btn hotHref ">取消关注</a> 
+		</p>
+	 </div>
+</li>
+</foreach>
+<else />
+	<li>
+		<div class="empty" style="margin:auto">
+			<img src="__PUBLIC__/m/images/no-more.png?a=b" class="no-more">
+			<span class="txt-nomore-msg">没有更多啦</span>
+		</div>
+	</li>
+</if>

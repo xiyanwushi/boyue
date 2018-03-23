@@ -1,0 +1,1 @@
+SELECT COUNT(*) AS tp_count FROM `dd_cart` WHERE `order_id` = 208 AND `mch_id` = 10433 AND `status` > -2 LIMIT 1  

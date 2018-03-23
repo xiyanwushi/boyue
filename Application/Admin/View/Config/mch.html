@@ -1,0 +1,36 @@
+
+        <div class="pageheader notab">
+            <h1 class="pagetitle">商户设置</h1>
+            <span class="pagedesc">设置网站的商户</span>
+            
+        </div><!--pageheader-->
+        
+        <div id="contentwrapper" class="contentwrapper lineheight21">
+        
+        
+            <form class="stdform stdform2" method="post">
+				<p>
+					<label>商户最多上传商品数量</label>
+					<span class="field"><input type="text" name="mnums" id="mnums" value="{$_CFG.mch.mnums}" class="smallinput" /></span>
+				</p>
+				<p>
+					<label>商户商品总价不超过？<small>单个商品总价不能超过设定值，单位:元</small></label>
+					<span class="field"><input type="text" name="mprice" id="mprice" value="{$_CFG.mch.mprice}" class="smallinput" /></span>
+				</p>	
+				<p>
+					<label>商户商品积分和总价最小最大<small>单个商品所需积分不能超过商品的百分比，最小最大以英文符号"-"隔开</small></label>
+					<span class="field"><input type="text" name="mplv" id="mplv" value="{$_CFG.mch.mplv}" class="smallinput" /></span>
+				</p>
+				<p>
+					<label>商户商品返佣比例最小最大<small>单个商品返佣比例百分比，最小最大以英文符号"-"隔开</small></label>
+					<span class="field"><input type="text" name="mpseparate" id="mpseparate" value="{$_CFG.mch.mpseparate}" class="smallinput" /></span>
+				</p>
+				<p class="stdformbutton">
+					<button class="submit radius2">提交</button>
+					<input type="reset" class="reset radius2" value="重置" />
+				</p>
+			</form>
+        
+        
+        </div><!--contentwrapper-->
+        

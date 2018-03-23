@@ -1,0 +1,83 @@
+<include file="include/head2" />
+<style>
+    .mui-bar-nav~.mui-content {
+        padding-top: 50px;
+        overflow: hidden;
+    }
+    
+    .mui-row.mui-fullscreen>[class*="mui-col-"] {
+        height: 100%;
+    }
+    
+    .mui-segmented-control .mui-control-item {
+        line-height: 50px;
+        width: 100%;
+    }
+    
+    .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+        background-color: #fff;
+    }
+    
+    .mui-segmented-control.mui-segmented-control-inverted.mui-segmented-control-vertical .mui-control-item,
+    .mui-segmented-control.mui-segmented-control-inverted.mui-segmented-control-vertical .mui-control-item.mui-active {
+        color: #505050;
+        border-bottom: 1px solid #ffffff;
+        background-color: transparent;
+    }
+    
+    .mui-segmented-control.mui-segmented-control-inverted.mui-segmented-control-vertical .mui-control-item.mui-active {
+        color: #dd2727;
+    }
+
+</style>    
+<div id="header" class="search-head header mui-bar mui-bar-nav"></div>
+	<include file="include/header"  title="商品分类" />
+    <!--分类开始-->
+    <div class="mui-content mui-row mui-fullscreen" style="margin-bottom:44px;">
+        <div class="mui-col-xs-3 myscroll" data-scroll="1">
+            <ul id="segmentedControls" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical" style="transform: translate3d(0px, 0px, 0px) translateZ(0px); transition-duration: 0ms;">
+            <foreach name="cates" item="v" key="k">
+                <li class="left-tit"><a href="#item{$v['id']}" class="mui-control-item">{$v['name']}</a></li>
+            </foreach>
+            </ul>
+        </div>
+        <div id="segmentedControlContents" class="mui-col-xs-9 myscroll" style="border-left: 1px solid #c8c7cc;height: 100%; overflow:scroll;">
+            <foreach name="cates" item="v" key="k">
+            <if condition="$v['_child']">
+            <div id="item{$v['id']}"  class="mui-control-content mui-active">
+               <!--一组分类-->
+                <div class="classification-group">
+                    <div class="classification-tit">{$v['name']}</div>
+                    <div class="classification-item">
+                        <ul class="clearfix">
+                            <foreach name="v['_child']" item="val">
+                            <li>
+                                <a href="{:U('Index/all',array('cate_id'=>$val['id']))}">
+                                    <div class="classification-img"><img src="{$val['pic']}"></div>
+                                    <div class="classification-txt">{$val['name']}</div>
+                                </a>
+                            </li>
+                            </foreach>
+                        </ul>
+                    </div>
+                </div>
+                <!--一组分类-->
+            </div>
+            </if>
+            </foreach>
+        </div>
+    </div>
+    <!--分类结束-->
+	
+	<div class="mask" id="loading">
+		<img src="__PUBLIC__/m/images/loading-grey.gif" style="position: fixed;_position:absolute;margin-left:-20px;left:50%;top:45%;">
+	</div>
+	
+<include file="include/footer" />
+<script>
+	function showItem(ob){
+		$(ob).parent().siblings().toggle();
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<include file="include/head" />
+<link href="__PUBLIC__/m/css/index3.css" rel="stylesheet" type="text/css">
+
+<!--app下载提醒-->
+<!-- <div class="index_layout"> 
+	<div class="cell"> 
+		<a href="https://m.lovo.cn/app/download.htm"><img width="100%" class="pic" src="__PUBLIC__/m/images/layout_M211.png"></a>
+		<a class="close"> <img src="__PUBLIC__/m/images/layoutM_close.png"> </a>
+	</div>
+</div> -->
+<div class="fullscreen">
+	<div id="fixedtop" class="showfixedtop-half">
+		<a id="layout_top" name="top"></a>
+		<div id="index_search_main" class="lovo-header-home-wrapper">
+			<div class="lovo-search-container on-blur" id="index_search_head">
+				<div class="lovo-search-box">
+					<div class="lovo-search-tb">
+						<div class="lovo-search-icon">
+							
+							<span id="index_search_bar_cancel" class="lovo-search-icon-cancel"><i class="lovo-sprite-icon"></i></span>
+						</div>
+						<form action="" class="lovo-search-form">
+							<div class="lovo-search-form-box" style="padding-left:8px;">
+								<div class="lovo-search-form-input">
+									<input type="hidden" name="sid" value="054cadfb3eb365fa315ea3f55425b43c">
+									<input id="kwd_input" autocomplete="off" class="text" placeholder="请输入要搜索的内容" name="searchKeyword" type="search">																<input id="index_category" name="catelogyList" type="text" style="display:none">
+								</div>
+							</div>
+						</form>
+						<div class="lovo-search-login login-ing">
+							<a class="lovo-search-form-icon" style="margin:12px;" onclick="searchHB();"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+	
+	<script>
+		var logo = "{$_site['logo']}";
+		if(logo !=""){
+			$('.lovo-sprite-icon').css({"background":"url("+logo+") no-repeat","background-size":"100%"});
+		}
+	</script>
+	<div id="content">
+		<section>
+			<div class="banner">
+				<div id="focus" class="focus">
+					<div class="hd">
+						<ul></ul>
+					</div>
+					<div class="bd">
+						<ul>
+							<volist name="_banner['config']" id="vo">
+							<li><a href="{$vo.url|default='javascript:;'}"><img _src="{$vo.pic}" src="{$vo.pic}" /></a></li>
+							</volist>
+						</ul>
+					</div>
+				</div>
+				<script src="__PUBLIC__/js/TouchSlide.1.1.js"></script>
+				<script type="text/javascript">
+					TouchSlide({ 
+						slideCell:"#focus",
+						titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+						mainCell:".bd ul", 
+						effect:"left", 
+						autoPlay:true,//自动播放
+						autoPage:true, //自动分页
+						switchLoad:"_src" //切换加载，真实图片路径为"_src" 
+					});
+				</script>
+			</div>
+		</section>
+		<section id="entry-list" class="region">
+			<div class="content">
+				<foreach name="_topcates" item="v">
+				<a href="{$v['url']}">
+					<img class="" width="100%" title="{$v['title']}" src="{$v['pic']}"><br>{$v['title']}
+				</a>
+				</foreach>
+			</div>
+		</section>
+		
+		<foreach name="feature" item="v" key="k">
+			<if condition="$v['show'] eq 1">
+				<div style="clear:both;font-size: 1.4555rem;<if condition="$k neq 1">padding:30px 0 5px 0;</if>">
+				<img src="{$v['pic']}" width="100%" title="{$v['name']}">
+				</div>
+			<elseif condition="$v['show'] eq 2" />
+				<div style="clear:both;font-size: 1.4555rem;<if condition="$k neq 1">padding:30px 0 5px 0;</if>">
+				<a href="javascript:;" class="hdmz">{$v['name']}</a>
+				</div>
+			<else />	
+				<div style="clear:both;font-size: 1.4555rem;<if condition="$k neq 1">padding:30px 0 5px 0;</if>">			
+				<img src="{$v['pic']}" width="100%" title="{$v['name']}">
+				{$v['name']}
+				</div>
+			</if>
+			
+			<div class="item-line" style="width: 100%; height: 9.2rem; margin-top: 0.4rem; ">
+				<foreach name="v['list']" item="val">
+				<div class="item-wrap">
+					<a class="item" href="{:U('Index/product',array('id'=>$val['id'],'is_zq'=>$v['checked']))}" title="{$val['title']}">
+						<img alt="{$val['title']}" class="" src="{$val['pic']}">
+						<div class="text">{$val['title']|msubstr=0,18,'utf-8',true}</div>
+						<div style="margin-top:5%;">
+							<div class="price" style="font-size:1rem;"><font style="font-size:0.8em">￥</font><span class="jq">{$val['price']+($val['points']*$_site['points_rate']/100)}</span></div>
+							<del style="font-size:0.8rem;color:#ccc">￥{$val['market_price']}</del>
+							<span class="cj">购买</span>
+						</div>
+					</a>
+				</div>
+				</foreach>
+			</div>
+			<if condition="$k eq 1">
+				<if condition="$_site['openad'] eq 1">
+					<section style="clear: both;border-top: 2px solid #ddd;">
+						<div style="width:47%;margin:2%; margin-right:0; float:left;clear: both;">
+						  <a alt="" target="_blank" href="{$ad1['url']}" title="">
+							<img src="{$ad1['pic']}" width="100%" style="width:100%;height:100%;" />
+						  </a>
+						</div>
+						<div style="width:47%;margin:2%; float:right">
+							<foreach name="ad23" item="v">
+								<a alt="" target="_blank" href="{$v['url']}" title="">
+									<img src="{$v['pic']}" width="100%" style="width:100%;height:100%;" />
+								</a>
+							</foreach>
+						</div>
+						<div class="bb" style="width:96%"> 
+							<foreach name="ad46" item="v">
+								<a alt="" target="_blank" href="{$v['url']}" title="">
+									<img src="{$v['pic']}" width="100%" style="width:100%;height:100%;" />
+								</a>
+							</foreach>
+						</div>
+					</section>
+				</if>
+			</if>
+		</foreach>
+	</div>
+	
+</div>
+<a href="{:U('Index/all')}" style="clear:both;color: #08122d;background: #f6f2f1;width: 96%;margin: 0 auto;
+	line-height: 3em;font-size: 14px;display: block;border: 1px solid #e3dfde;text-align: center;">查看所有商品
+</a>
+<include file="include/footer" />
+<div class="mask" id="loading">
+	<img src="__PUBLIC__/m/images/loading-grey.gif" style="position: fixed;_position:absolute;margin-left:-20px;left:50%;top:45%;">
+</div>
+<script>
+	window.shareData = {
+		img: "{$_CFG['site']['logo']|complete_url}", 
+		link: "<?php echo complete_url(U('Index/index',http_build_query(array_merge(array('parent' => $user['id']),$_GET))));?>",
+		title: '博悦乐活网',
+		desc: "欢迎关注博悦乐活网，更多优惠等你来拿！"
+	};	
+</script>
+<include file="include/share" />
+</body>
+</html>

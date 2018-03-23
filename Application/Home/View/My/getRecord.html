@@ -1,0 +1,20 @@
+		
+<if condition="$list">
+<foreach name="list" item="v">
+<li>
+	<div class="fl">
+		<div>{:get_finance_type($v['type'])}</div>
+		<div style="margin-top:8px;">{$v['create_time']|date="Y-m-d H:i:s",###}</div>
+	</div>
+	<div class="fr sw">{:get_finance_action($v['action'])}	</div>
+	<div class="fr" style="color:#659ed2;margin-top:15px;font-size:14px;margin:10px;">{$v['value']}</div>
+</li>	
+</foreach>
+<else />
+	<div style="border:0px;" class="empty">
+		<span class="pullUpLabel">
+			<img src="__PUBLIC__/m/images/no-more.png" class="no-more">
+			<span class="txt-nomore-msg">没有更多啦</span>
+		</span>
+	</div>
+</if> 				

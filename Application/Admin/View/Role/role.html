@@ -1,0 +1,60 @@
+        <div class="pageheader notab">
+            <h1 class="pagetitle">编辑角色</h1>
+            <span class="pagedesc">请认真编辑角色的各项信息</span>
+            
+        </div><!--pageheader-->
+        <style>
+			.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+				border: 1px solid #ddd;
+			}
+			table{table-layout: fixed;}
+			/*.table td{word-break: break-all; word-wrap:break-word; padding: 5px 5px 0 0;}*/
+			.tab{word-break: break-all; word-wrap:break-word; width: 100px;float: left}
+		</style>
+        <div id="contentwrapper" class="contentwrapper lineheight21">
+            <form class="stdform stdform2" method="post">
+				
+				<div id="cShape">
+
+				</div>
+
+
+				<p class="stdformbutton">
+					<input type="hidden" class="reset radius2" name="role_id" value="{$role_id}" />
+					<button class="submit radius2">提交</button>
+					<input type="reset" class="reset radius2" value="重置" />
+				</p>
+			</form>
+			
+			<script>
+				
+				jQuery(document).ready(function(d){
+					$ = jQuery;
+					//调整下拉的默认选择
+					$("select").each(function(index, element) {
+					  $(element).find("option[value='"+$(this).attr('default')+"']").attr('selected','selected');
+					});
+				});
+			</script>
+        
+        </div><!--contentwrapper-->
+		<script>
+		checkSelect();
+        function checkSelect() {
+			var role_id = "{$role_id}";
+			jQuery.post("{:U('Role/getMenu')}", {role_id: role_id}, function (data) {
+				//console.log(data);
+				if (data) {
+					jQuery('#cShape').html('');
+					jQuery('#cShape').append(data.info);
+				} else {
+					alert('網絡忙，請稍後再試');
+				}
+			});
+		}
+		</script>
+		<script>
+            function checkAll(obj){
+                $(obj).parents('.b-group').eq(0).find("input[type='checkbox']").prop('checked', $(obj).prop('checked'));
+            }
+		</script>

@@ -1,0 +1,96 @@
+
+        <div class="pageheader notab">
+            <h1 class="pagetitle">商品标签设置</h1>
+            <span class="pagedesc">设置商品标签图,选择显示方式</span>
+            
+        </div><!--pageheader-->
+        
+        <div id="contentwrapper" class="contentwrapper lineheight21">
+			<style>
+				
+				.stdform2 label {padding:5px;}
+			</style>
+        
+            <form class="stdform stdform2" method="post">
+				<div class="tableoptions">                    
+                    <input value="添加标签" type="button" class="radius3" onclick="add_row()" />
+                </div><!--tableoptions-->
+				<table cellpadding="0" cellspacing="0" border="0" id="table2" class="stdtable stdtablecb">
+                    <thead>
+                        <tr>
+                            <th class="head1" width="200">图片</th>
+                            <th class="head0" style="text-align:center;">标签名称</th>
+							<th class="head0" style="text-align:center;">积分购买</th>
+							<th class="head0" width="100" style="text-align:center;">显示</th>
+							<th class="head0">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+						
+                    	<volist name="_feature['config']" id="vo">
+                        <tr>
+                            <td>
+								<iframe src="{:U('upload?cur_index='.$i.'&event=setPath&url='.$vo['pic'])}" scrolling="no" style="width:200px; height:100px;"></iframe>
+								<input type="hidden" name="pic[]" value="{$vo.pic}" />
+							</td>
+                            <td style="text-align:center"><input type="text" style="text-align:center" name="name[]" value="{$vo.name}" /></td>
+							<td style="text-align:center">
+								<label><input type="checkbox" <if condition="$vo['checked'] eq 1">checked</if> name="checked{$i}" value="1" />是否积分购买</label>
+							</td>
+							<td style="text-align:center">
+								<label><input type="radio" <if condition="$vo['show'] eq 1">checked</if> name="show{$i}" value="1" />只显示图片</label>
+								<label><input type="radio" <if condition="$vo['show'] eq 2">checked</if> name="show{$i}" value="2" />只显示名称</label>
+								<label><input type="radio" <if condition="$vo['show'] eq 3">checked</if> name="show{$i}" value="3" />图片名称都显示</label>
+							</td>
+							<td><a href="javascript:;" onclick="del_row(this)">删除</a></td>
+                        </tr>
+                        </volist>
+						 
+                    </tbody>
+                </table>
+				<script>
+				var cur_index = null;
+				function add_row(){
+					//return false;
+					html = '<tr>'
+						  +'	 <td>'
+						  +'		<iframe src="{:U('upload?cur_index=_n_&event=setPath')}" scrolling="no" style="width:200px; height:100px;"></iframe>'
+						  +'		<input type="hidden" name="pic[]" value="" />'
+						  +'	</td>'
+						  +'	<td  style="text-align:center"><input type="text" style="text-align:center" name="name[]" /></td>'
+						  +'    <td style="text-align:center"><label><input type="checkbox" name="checked_ns" value="1" />是否积分购买</label></td>'
+						  +'	<td style="text-align:center">'
+						  +'	<label><input type="radio" name="show_ns" value="1" />只显示图片</label>'
+						  +'	<label><input type="radio" name="show_ns" value="2" />只显示名称</label>'
+						  +'	<label><input type="radio" name="show_ns" value="3" />图片名称都显示</label>'
+						  +'	</td>'
+						  +'	<td><a href="javascript:;" onclick="del_row(this)">删除</a></td>'
+						  +'</tr>';
+					size = jQuery("#table2").find("tbody").find("tr").size();
+					size_r = size+1;
+					html = html.replace('_n_',size_r);
+					html = html.replace(/_ns/g,size_r);
+					jQuery("#table2").find("tbody").append(html);
+					
+				}
+				
+				function del_row(obj){
+					jQuery(obj).parent("td").parent("tr").remove();
+				}
+				
+				function setPath(url){
+					if(cur_index==null)return;
+					index = cur_index;cur_index= null;
+					jQuery("#table2").find("tbody").find("tr").eq(index-1).find("td:eq(0)").find("input[type=hidden]").val(url);
+				}
+				
+				</script>
+				<p class="stdformbutton">
+					<button class="submit radius2">提交</button>
+					<input type="reset" class="reset radius2" value="重置" />
+				</p>
+			</form>
+        
+        
+        </div><!--contentwrapper-->
+        

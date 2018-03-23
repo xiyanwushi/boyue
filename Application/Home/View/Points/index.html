@@ -1,0 +1,63 @@
+<include file="include/head" />
+<link href="__PUBLIC__/m/css/index3.css" rel="stylesheet" type="text/css">
+<include file="include/header" title="积分专区" />
+<style>
+.item .cj {
+    float: left;
+    padding-left: 0.2rem;
+}
+.item .price {
+    font-size: 1.2rem;
+}
+.btntext{
+	position: absolute;
+    bottom: 0rem;
+    right: .3rem;
+    background: red;
+    display: block;
+    width: 2.8rem;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 12px;
+}
+</style>
+<div class="fullscreen" style="margin-top: 44px;">
+	<div id="content">
+			<div class="item-line" style="width: 100%; height: 9.2rem; margin-top: 0.6rem; ">
+				<foreach name="list" item="val">
+				<div class="item-wrap" style="position: relative;">
+					<a class="item" href="{:U('Index/product',array('id'=>$val['id'],'is_zq'=>$v['checked']))}" title="{$val['title']}">
+						<img alt="{$val['title']}" class="" src="{$val['pic']}">
+						<div class="text">{$val['title']}</div>
+						<div style="margin-top:5%">
+							<div class="price">∮ <span class="jq">{$val['zq_points']}</span></div>
+							<del class="cj">￥{$val['market_price']}</del>
+						</div>
+					</a>
+					<span class="btntext" onclick="location.href=&#39;{:U('Index/product',array('id'=>$val['id'],'is_zq'=>1))}&#39;">兑换</span>
+				</div>
+				</foreach>
+			</div>
+
+	</div>
+	
+</div>
+
+<include file="include/footer" />
+<div class="mask" id="loading">
+	<img src="__PUBLIC__/m/images/loading-grey.gif" style="position: fixed;_position:absolute;margin-left:-20px;left:50%;top:45%;">
+</div>
+<script>
+	window.shareData = {
+		img: "{$_CFG['site']['logo']|complete_url}", 
+		link: "<?php echo complete_url(U('Index/index',http_build_query(array_merge(array('parent' => $user['id']),$_GET))));?>",
+		title: '博悦乐活网',
+		desc: "欢迎关注博悦乐活网，更多优惠等你来拿！"
+	};	
+</script>
+<include file="include/share" />
+</body>
+</html>

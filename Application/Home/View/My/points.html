@@ -1,0 +1,113 @@
+<include file="include/head" />
+<link href="__PUBLIC__/m/css/iscroll.css" rel="stylesheet" type="text/css">
+<link href="__PUBLIC__/m/css/record.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__PUBLIC__/m/js/iscroll.js"></script>
+<include file="include/header" title="我的{$_site['points_name']}" />
+<style>
+.sep{
+	margin: 0 auto;
+    display: block;
+    width: 150px;
+    height: 22px;
+    background: #FF9;
+    margin-top: 3px;
+    line-height: 22px;
+    color: #c40001;
+    border-radius: 5px;
+    text-align: center;
+	font-size: 12px;
+}
+#wrapper {
+    top: 222px!important;
+	margin-bottom: 50px;
+}
+</style>
+<div style="display: block;margin-top: 44px;" class="landscape">
+	<div class="main">
+	    <div class="mb-os">
+	    	<ul>
+				<li style="line-height:22px;height:115px;background: #c40001;text-align: left;padding-left: 5px;color:#fff;border-bottom: 1px solid #A96C6C;">
+					<div style="width:70%;float:left; margin-top:10px";>
+						{$_site['points_name']}规则说明：满{$_withdraw['points_ext']}方可提现且必须{$_withdraw['points_per']}的整数倍，
+						重销{$_site['points_name']}不可提现，提现手续费{$_withdraw['points_lv']}%，最高手续费为：{$_withdraw['points_max']}，
+						转化重销{$_site['points_name']}{$_withdraw['points_cx_lv']}%，提现{$_site['points_name']}实际到账
+						<?php echo (100-$_withdraw['points_lv']-$_withdraw['points_cx_lv']);?>%
+					</div>
+					<div style="float:left;width:30%">
+						<a href="javascript:;" onclick="withdraw(2);" class="w-btn">积分提现</a>
+						<a href="javascript:;" onclick="$('.popup').toggle();" class="w-btn">积分转让</a>
+						<a href="javascript:;" id="reflash" class="w-btn">乐币记录</a>
+					</div>
+				</li>
+	       		<li style="line-height: 30px;background: #c40001;text-align: left;padding-left: 5px;color:#fff;border-bottom: 1px solid #A96C6C;">
+	       			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td align="center" width="36%"> {$_site['points_name']}:<b style="font-size:1.5em;color:#FC3">{$user['points']}</b> </td>
+						<td align="left" width="35%"> 待结算：<b style="font-size:1.5em;color:#FC3">¥{$separate_no|default="0.00"}</b> </td>
+						<td align="left" > 重销{$_site['points_name']}:<b style="font-size:1.5em; color:#FC3">{$user['cx_points']}</b> </td>
+					</tr>
+					</table>
+				</li>
+				<li style="line-height: 30px;background: #c40001;text-align: left;padding-left: 5px;height:30px; color: #fff;">
+					<div>
+						<div style="float:left;width:50%;text-align:center;">
+							<span class="sep" _done="3">已结算{$_site['points_name']}：{$separate_done|default="0.00"}</span>
+						</div>
+						<div style="float:left;width:50%;text-align:center;">
+							<span class="sep" _done="0">待结算{$_site['points_name']}：{$separate_no|default="0.00"}</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+	    </div>
+     	<div class="c-clild">
+			<div class="mainCont">
+				<div id="wrapper" style="overflow: hidden; left: 0px;">
+					<div id="scroller" style="transform-origin: 0px 0px 0px; position: absolute; top: 0px; left: 0px;">
+						<ul class="rd">
+							
+						</ul>
+						<div class="more"><i class="pull_icon"></i><span>上拉加载...</span></div>
+					</div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<!--  -->
+<div class="mask" id="loading"><img src="__PUBLIC__/m/images/loading-grey.gif" style="position: fixed;_position:absolute;margin-left:-20px;left:50%;top:45%;"></div>
+
+<div class="popup" style="display:none">
+	<div>
+		<div class="co-list" style="height:80px;">
+			<div class="col-a" style="height:40px;">
+				<span class="col-span" style="float: left;margin-top: 3%;">积分类&nbsp;型：</span>
+				<select name="points_type" class="col-aaa fl money put" id="points_type">
+					<option value="1">重销{$_site['points_name']}</option>
+					<option value="2">自有{$_site['points_name']}</option>
+				</select>
+				
+			</div>
+			<div class="col-a" style="height:40px;">
+				<span class="col-span" style="float: left;margin-top: 3%;">收&nbsp;&nbsp;款&nbsp;&nbsp;&nbsp;人：</span>
+				<input type="text" class="col-aaa fl money put" id="mobile" value=""  placeholder="输入收款人手机号">
+			</div>
+			<div class="col-a" style="height:40px;">
+				<span class="col-span" style="float: left;margin-top: 3%;">转让积&nbsp;分：</span>
+				<input type="text" class="col-aaa fl money put" id="points" value=""  placeholder="输入积分">
+			</div>
+		</div>
+		<input style="background:#FF5722;" value="确定转让" onclick="sk();" type="button" />
+		<input class="reset" onclick="$('.popup').toggle();" value="取消" type="button" />
+	</div>
+</div>
+
+<include file="include/footer" />
+<script>
+	var type = 'points';
+</script>
+<script type="text/javascript" src="__PUBLIC__/m/js/record.js"></script>
+</body>
+</html>

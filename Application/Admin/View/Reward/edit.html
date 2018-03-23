@@ -1,0 +1,40 @@
+
+        <div class="pageheader notab">
+            <h1 class="pagetitle">发放领导奖奖励</h1>
+            <span class="pagedesc">请认真查看信息，提交后不可撤销，符合发放条件用户如下：</span>
+        </div><!--pageheader-->
+        
+       
+        <div id="contentwrapper" class="contentwrapper lineheight21">
+			 <form class="stdform stdform2" method="post">
+				<p class="stdformbutton">
+					<button class="submit radius2">一键发放</button>
+				</p>
+			</form>
+			<table cellpadding="0" cellspacing="0" border="0" id="table2" class="stdtable stdtablecb">
+				<thead>
+					<tr>
+						<th class="head0">用户ID</th>
+						<th class="head1">分销团队总额</th>
+						<th class="head1">发放等级</th>
+						<th class="head1">发放比例(比例为领导奖设置比例)</th>
+						<th class="head1">发放金额(发放比例乘以团队顶级领导额度再平均分给每个团队人员)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<volist name="list" id="vo">
+					<tr>
+						<td>{$vo.id}</td>
+						<td>{$vo['separate']+$vo['tward']}</td>
+						<td>{$vo['reward']}</td>
+						<td>{$vo['lv']}%</td>
+						<td>{$vo['reward_money']}</td>
+					</tr>
+					</volist>
+				</tbody>
+			</table>
+			
+           
+        
+        </div><!--contentwrapper-->
+        

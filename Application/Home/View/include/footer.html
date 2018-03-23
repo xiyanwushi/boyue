@@ -1,0 +1,70 @@
+<div style="clear:both;height:4.5rem;"></div>
+<div class="floor bottom-bar-pannel" id="floor-bottom-bar-pannel-id">
+	<div class="floor-container ">
+		<ul class="tab4">
+			<li>
+				<span class="bar-img">
+					<a class="J_ping" href="{:U('Index/index')}">
+					<img src="__PUBLIC__/m/images/icon-home01.png"></a>
+				</span>
+			</li>
+			<li>
+				<span class="bar-img">
+					<a class="J_ping" href="{:U('Index/cates')}">
+						<img src="__PUBLIC__/m/images/icon-catergry.png">
+					</a>
+				</span>
+			</li>
+			<li>
+				<span class="bar-img">
+					<a class="J_ping" href="{:U('Index/cart')}">
+						<img src="__PUBLIC__/m/images/icon-cart.png">
+					</a>
+				</span>
+			</li>
+			<li>
+				<span class="bar-img">
+					<a class="J_ping" href="{:U('My/index')}">
+					<img src="__PUBLIC__/m/images/icon-me.png">
+				</a>
+				</span>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div id="indexToTop" style="display: none; width:3em; position:fixed;bottom:100px; right:20px; z-index:999;">
+	<img src="__PUBLIC__/m/images/scroll-to-top-icon.png" style="width: 100%;">
+</div>
+<div style="display:none; position:absolute; top:-9999px; left:-9999px;">
+	<img src="" _src="{:U('Ajax/data')}" id="lazyload" />
+</div>
+<script>
+	var topBtn = document.getElementById('indexToTop');
+	window.onscroll = function () {
+		// 获取页面向上滚动距离，chrome浏览器识别document.body.scrollTop，而火狐识别document.documentElement.scrollTop，这里做了兼容处理
+		var toTop = document.documentElement.scrollTop || document.body.scrollTop;
+		// 如果滚动超过300，返回顶部按钮出现，反之隐藏
+		if(toTop>=300){
+			topBtn.style.display = 'block';
+		}else {
+			topBtn.style.display = 'none';
+		}
+	}
+	topBtn.onclick=function () {
+		var timer = setInterval(function () {
+			var toTop = document.documentElement.scrollTop || document.body.scrollTop;
+			// 判断是否到达顶部，到达顶部停止滚动，没到达顶部继续滚动
+			if(toTop == 0){
+				clearInterval(timer);
+			}else {
+				// 设置滚动速度
+				var speed = Math.ceil(toTop/5);
+				// 页面向上滚动
+				document.documentElement.scrollTop=document.body.scrollTop=toTop-speed;
+			}
+		},50);
+	}
+	
+	$("#lazyload").attr('src',$("#lazyload").attr('_src'));
+</script>

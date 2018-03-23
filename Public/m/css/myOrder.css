@@ -1,0 +1,84 @@
+html{font-size:10px!important;}
+.cover-info {
+	background-color: #fff;
+	margin: 0 auto;
+}
+.mjd-header {
+	width: 100%;
+}
+.new-search-tab {
+	position: relative;
+	height: 2.8rem;
+	font-size: 0;
+	width: 100%;
+	background-color: #fff;
+}
+.new-change-eleven {
+	width: 20%;
+	border-right: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: inline-block;
+	font-size: .875rem;
+	text-align: center;
+	line-height: 2.8rem;
+}
+.bdr-bom:after {
+	background-color: #bfbfbf;
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	width: 200%;
+	height: 1px;
+	content: '';
+	-moz-transform: scale(.5, .5);
+	-ms-transform: scale(.5, .5);
+	-webkit-transform: scale(.5, .5);	
+	transform: scale(.5, .5);
+	-moz-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0
+}
+.new-change-eleven span {
+	color: #232326;
+	display: block;
+	font-size:12px;
+}
+.active span{ border-bottom:2px solid #c40001; }
+.ol-b {
+
+height: 34px;
+line-height: 34px;
+background-color: #fafafa;
+border: 1px solid;
+border-color: #e3e3e3;
+border-bottom-left-radius: 8px;
+border-bottom-right-radius: 8px;
+box-shadow: 0 1px 3px rgba(0,0,0,.1);
+text-align: center;
+}
+.mb-ollm{
+display: -webkit-box;
+padding: 10px;
+background-color: #fff;
+border: 1px solid;
+border-top-width: 0;
+border-bottom-width: 0;
+border-color: #e3e3e3;
+box-shadow: 0 1px 3px rgba(0,0,0,.1);
+
+
+}
+.ol-t span{ float:right !important;display:inline-block;}
+.ol-b span{ float:left; margin-left:10px;}
+.ol-b a{display:inline-block; float:right; margin-right:10px; margin-top:5px;background:#c40001; color:#fff; border-radius:5px; padding:0px 10px; vertical-align:middle; line-height:22px; }
+.yqx{ background:#ddd !important; color:#666!important; }
+.ddzz{ background:#fff !important; color:#666!important; border:1px solid #666;line-height:18px;height:22px; }
+.mb-ollm p{line-height: 2em; color:#999}
+.mb-ollm .imgbox{ height:60px; display:inline-block;  overflow: hidden;}
+.mb-ollm .imgbox img{ height:60px; width:60px;}
+#wrapper {
+    top: 75px;
+}

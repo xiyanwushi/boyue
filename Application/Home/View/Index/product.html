@@ -1,0 +1,246 @@
+<include file="include/head" />
+<link href="__PUBLIC__/m/css/product.css" rel="stylesheet" type="text/css">
+<include file="include/header" title="产品详情" />
+<style>
+.d-cul li label {
+    display: inline-block;
+    width: 88px;
+	font-size: .8rem;
+}
+.focus .bd{height:375px;}
+.focus .bd li img{height:375px;}
+</style>
+<section class="content" style="margin-top:280px;">
+	<div class="active" id="h5v0">
+		<div id="J_detail">
+			<div id="J_detail_main">
+				<div class="banner">
+					<div id="focus" class="focus">
+						<div class="hd">
+							<ul></ul>
+						</div>
+						<div class="bd">
+							<ul>
+								<volist name="info['banner']" id="vo">
+								<li><a href="javascript:;"><img _src="{$vo}" src="{$vo}" /></a></li>
+								</volist>
+							</ul>
+						</div>
+					</div>
+					<script src="__PUBLIC__/js/TouchSlide.1.1.js"></script>
+					<script type="text/javascript">
+						TouchSlide({ 
+							slideCell:"#focus",
+							titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+							mainCell:".bd ul", 
+							effect:"left", 
+							autoPlay:true,//自动播放
+							autoPage:true, //自动分页
+							switchLoad:"_src" //切换加载，真实图片路径为"_src" 
+						});
+					</script>
+				</div>  
+				<div class="dt-info" data-spm="info">     
+					<h1 id="goodsNameStrong" class="dtif-h">{$info['title']}</h1>
+						<ul class="d-cul">
+						
+						<li>
+							<label>官方价:</label>
+							<span class="gray12"><del class="dc-origin" id="marketPriceSpan">￥{$info['market_price']}</del></span>						
+						</li>
+						<li class="dic-fli">
+							<label>销售价:</label>
+							<ins class="red dc-promo" id="salePriceSpan">￥{$info['price']+($info['points']*$_site['points_rate']/100)}</ins> 
+							<span class="gray12"> <span class="di-org" id="actTitle"></span></span>
+						</li>
+						<li class="dic-fli">
+							<label>
+								最高{$_site['points_name']}抵扣:
+							</label>
+							<span style="margin-left: 5px; font-size: 12px;" id="mayIntDiv">
+							<span id="mayInt">{$info['points']*$_site['points_rate']/100}元
+								({$info['price']}元+{$info['points']}{$_site['points_name']})</span</span> 
+						</li>  
+						<li class="dic-fli">
+							<label>{$_site['points_name']}兑换:</label>
+							<span style="margin-left: 5px; font-size: 12px;" id="mayIntDiv">
+							<span id="mayInt">{$info['zq_points']|default="不可兑换"}</span><b></b></span> 
+						</li>  
+						<li class="dc-area">
+							<label style="float:left">综合评分:</label>
+							<ul class="rating  star{$info['score']}" style="padding:0; border:0; float:left;">
+								<li class="one"><a href="javascript:;" title="1分">1</a></li>
+								<li class="two"><a href="javascript:;" title="2分">2</a></li>
+								<li class="three"><a href="javascript:;" title="3分">3</a></li>
+								<li class="four"><a href="javascript:;" title="4分">4</a></li>
+								<li class="five"><a href="javascript:;" title="5分">5</a></li>
+							</ul>
+						</li>
+						<li>
+							<label>累计销售:</label>{$info['sold']} 件 
+						</li>
+						<li>
+							<label>剩余库存:</label>{$info['stock']} 件 
+						</li>
+					</ul>
+				</div>
+				<div id="sku-all" class="dgsc-pr">
+					
+					<div class="dgscp-c">
+						<h3 class="bd">购买数量</h3>
+						<div class="nums"> 
+							<span class="minus lock J_updateQuantity" onclick="setCount(1,$('#goodsCount').val())">-</span>
+							<input id="goodsCount" maxlength="3" onkeyup="value=value.replace(/[^\d]/g,&#39;&#39;)" type="text" data-default="1" value="1" class="input-nums c-form-txt-normal J_quantity">
+							<span class="plus  J_updateQuantity" onclick="setCount(2,$('#goodsCount').val(),{$info['id']})">+</span> 
+						</div>
+					</div>
+				</div>
+				<a class="dgscp-c" href="javascript:;" target="_blank">
+					<img src="__PUBLIC__/m/images/tthh30.png" style="WIDTH: 100%;">
+				</a>
+				<div class="dt-content">
+					<ul class="dtct-ul">
+						<li class="liChange sel" index="1">图文参数</li>
+						<li class="liChange" index="2">产品评价</li>
+					</ul>
+					<div class="dtct-otr" style="min-height: 379px;">
+						<div class="dtct-container" style="">
+							<div class="changeByCli ByCli1 dt-imgtext visible" style="display: block;">
+								{$info['param']}
+							</div>
+							
+							<div class="changeByCli ByCli2 dt-comt visible" style="display:none">
+								<section id="J_commentCont" class="innercontent">    
+									<div class="dtcm-ct" id="J_comment_cont">
+										<ul id="list">
+											
+										</ul>
+									</div>
+									<div class="c-pnav-con" id="J_dcpage">
+										<section class="c-p-sec">
+											<div class="c-p-pre">
+												<span class="c-p-p" style="left: 6px;"><em></em></span>
+												<a href="javascript:;" id="prev">上一页</a>
+											</div>
+											<div class="c-p-cur">
+												 <div class="c-p-arrow c-p-down"><span id="vcount">1/{$assess_count}</span><span></span></div>
+											</div>
+											<div class="c-p-next">
+												<a href="javascript:;" id="next">下一页</a><span class="c-p-p"><em></em></span>
+											</div>
+									   </section>
+									</div> 
+								</section>         
+							</div>
+						</div>
+					</div>
+					<div id="J_detail_commloading" class="dt-loading none"><span class="c-loading"></span></div>
+				</div>
+				<div id="action-bar-padding"></div>
+			</div>
+		</div>
+	</div>
+	<if condition="$qrcode">
+	<div style="width:100%;position:relative;">
+		<img src="__PUBLIC__/images/wxbg.jpg" style="width:100%;margin-bottom:35px;" />
+		<img src="{:getqrcode($user['id'])}" style="position: absolute;top: 59.555%;width: 130px;left: 33%;" />
+	</div>
+	</if>
+	<div class="miblebox" id="goods-img-box">
+		<div class="hold-div-top" style="height: 20px;"></div>
+		<div class="hold-div-bottom"></div>
+		<div id="cart1" class="cart-concern-btm-fixed five-column four-column">
+			<div class="concern-cart" style="width:42%">
+				<a class="Customer-service-icn" href="javascript:;" onclick="$('#S_ODIALOG').toggle();" style="width:33.3%">
+					<em class="help-act-icn"></em>
+					<span class="focus-info">客服</span>
+				</a>
+				<a class="cart-car-icn" id="toCart" href="{:U('Index/cart')}" style="width:33.3%">
+					<em class="btm-act-icn" id="shoppingCart">
+						<i class="order-numbers" id="carNum">{$cartNums}</i>
+					</em>
+					<span class="focus-info">购物车</span>
+				</a>
+				<a class="love-heart-icn L_ping" onclick="Favorite({$info['id']});">
+					<div class="focus-container">
+						<div class="focus-icon">
+							<if condition="$favorite">
+							<i class="bottom-focus-icon focus-on"></i>
+							<else />
+							<i class="bottom-focus-icon focus-out"></i>
+							</if>
+						</div>
+						<span class="focus-info">关注</span>
+					</div>
+				</a>
+			</div>
+			<div class="action-list" style="width:58%">
+				<div class="dt-action">
+					<div class="dta-iner">
+			            <div class="item-action">
+							<div onclick="addCart({$info['id']},1);" class="add-to-cart  bottom-cart-entrance">加入购物车</div>
+							<div onclick="addCart({$info['id']},2);" class="buy-now">立即购买</div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="ewwm" style="display:none">
+		<div class="gzewm">
+			<a href="javascript:void(0);"  onclick="$('.ewwm').toggle();" style="position: absolute; top:2%; right:2%">
+				<img src="__PUBLIC__/m/images/xx.jpg" />
+			</a>
+			<a href="javascript:void(0)">
+				<if condition="$info['user_id'] and $info['user']['kefu'] neq ''">
+					<img src="{$userp['kefu']}" width="80%" style="margin:10%">
+				<else />
+					<img src="{$_site['kefu']}" width="80%" style="margin:10%">
+				</if>
+			</a>
+		</div>
+	</div>
+	
+	<div class="Customer-service cant" id="S_ODIALOG" style="display:none">
+		<a style="position:relative;" href="tel:<if condition="$userp">{$userp['mobile']}<else />{$_site['tel']}</if>">
+			<img src="__PUBLIC__/m/images/tel.jpg">
+			<span style="position: absolute;top: 1.1em;left: 58%;">
+				<if condition="$userp">
+					{$userp['mobile']}
+				<else />
+					{$_site['tel']}
+				</if>
+			</span>
+		</a>
+		<a href="javascript:$('.ewwm').toggle();$('#S_ODIALOG').toggle();">
+			<img src="__PUBLIC__/m/images/wx.jpg">
+		</a>		
+		<a href="javascript:$('#S_ODIALOG').toggle();" style="background:#042148; color:#fff; border-radius:20px; line-height:2em;height:2em">取消</a>
+	</div>
+</section>
+
+
+<div class="mask" id="loading">
+	<img src="__PUBLIC__/m/images/loading-grey.gif" style="position: fixed;_position:absolute;margin-left:-20px;left:50%;top:45%;">
+</div>
+<div id="indexToTop" style="display: none; width:42px; position:fixed;bottom:100px; right:20px; z-index:999;">
+	<img src="__PUBLIC__/m/images/scroll-to-top-icon.png" style="width: 100%;">
+</div>
+<script>
+	var is_zq = "{$_GET['is_zq']}";
+		product_id = "{$info['id']}";
+		assess_count = "{$assess_count}"?"{$assess_count}":0;
+</script>
+<script src="__PUBLIC__/m/js/product.js"></script>
+<script>
+	window.shareData = {
+		img: "{$info['pic']|complete_url}", 
+		link: "<?php echo complete_url(U('Index/product',http_build_query(array_merge(array('parent' => $user['id'],'id'=>$info['id']),$_GET))));?>",
+		title: '博悦乐活网',
+		desc: "{$info['title']}"
+	};	
+</script>
+<include file="include/share" />
+</body>
+</html>

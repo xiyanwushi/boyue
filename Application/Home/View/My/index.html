@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html data-dpr="1" style="font-size: 15px;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{$_site['name']}</title>
+<meta name="keywords" content=""> 
+<meta name="description" content="">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="yes" name="apple-touch-fullscreen">
+<meta name="data-spm" content="a215s">
+<meta content="telephone=no,email=no" name="format-detection">
+<meta content="fullscreen=yes,preventMove=no" name="ML-Config">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"> 
+<link rel="shortcut icon" href="__PUBLIC__/m/images/favicon.ico" type="image/x-icon">
+<link href="__PUBLIC__/m/css/newall.css" rel="stylesheet" type="text/css">
+<link href="__PUBLIC__/layer/skin/layer.css" rel="stylesheet" type="text/css">
+<script src="__PUBLIC__/js/jquery-1.7.min.js"></script>
+<script src="__PUBLIC__/layer/layer.js"></script>
+</head>
+<body style="font-size: 12px; background: #f5f5f5;">
+<link href="__PUBLIC__/m/css/my.css" rel="stylesheet" type="text/css">
+<include file="include/header" title="个人中心" />
+<div style="display: block;margin-top: 44px;" class="landscape">
+    <div class="main">
+        <div class="mb-user">
+            <a href="{:U('My/sync_profile')}"><img src="{$user['headimg']}" class="touxiang" width="20px"></a>
+            <p>{$user['nickname']}</p>
+            <p>
+                <if condition="$user['mobile']">{$user['mobile']}
+                    <else /><a style="color:#8B65DD" href="{:U('My/profile')}">立即认证</a></if>
+            </p>
+            <a href="{:U('My/level1')}" class="level"><span class="title">{$_level[$user['level']]['name']}</span></a>
+            <div class="mb-os" background-color="#f15353">
+                <ul>
+                    <li>
+                        <a href="#" class="fragment">
+                            <font style="font-size: 1rem;color: #000;">{$user['money']}</font>
+                            <br>余额 </a>
+                    </li>
+                    <li>
+                        <a href="#" class="fragment">
+                            <font style="font-size: 1rem;color: #000;">{$user['points']+$user['cxpoints']+$separate_no}</font>
+                            <br>乐币 </a>
+                    </li>
+                    <li  ><!--style="line-height: 40px;"-->
+					<a  href="#" class="fragment">
+                        <font style="font-size: 1rem;color: #000;">{$user['frozen']}</font>
+                            <br><font  class="fragment" >冻结积分 </font>
+					</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 订单开始 -->
+        <div class="user_center">
+            <div class="Order_form">
+                <div class="title_name">订单管理 <a href="{:U('My/order')}"><font style="text-indent:15px;text-align:right;"><i>所有订单＞&nbsp;&nbsp;&nbsp;</i></font></a></div>
+                <ul class="Menu_list">
+                    <li>
+                        <a href="{:U('My/order')}"><img src="Public/m/images/icon_user_01.png" />
+                            <h5>待付款</h5></a>
+                    </li>
+                    <li>
+                        <a href="{:U('My/order',array('status'=>3))}"><img src="Public/m/images/icon_user_02.png" />
+                            <h5>待发货</h5></a>
+                        <!--em class="Number">1</em-->
+                    </li>
+                    <li>
+                        <a href="{:U('My/order',array('status'=>1))}"><img src="Public/m/images/icon_user_03.png" />
+                            <h5>待收货</h5></a>
+                    </li>
+                    <li>
+                        <a href="{:U('My/order',array('status'=>4))}"><img src="Public/m/images/icon_user_pj.png" />
+                            <h5>待评价</h5></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu_Manager clearfix ">
+			 <div class="title_name" style="text-indent:20px;height:36px;border-bottom:solid 1px #f5f5f5;line-height: 36.8px;font-size:0.857rem;font-weight:bolder">基础工具</div>
+               <!--  <a href="user_Red_packets.html"><img src="Public/m/images/icon_user_05.png" />
+                    <h5>红包</h5></a> -->
+				<a href="{:U('Points/index')}"><img src="Public/m/images/Aftermarket.png" />
+                    <h5>积分商城</h5></a>
+				<a href="{:U('My/money')}"><img src="Public/m/images/icon_users_04.png" />
+                    <h5>余额管理</h5></a>
+                <a href="{:U('My/points')}"><img src="Public/m/images/icon_user_08.png" />
+                    <h5>乐币管理</h5></a>
+					
+                <a href="{:U('My/profile')}"><img src="Public/m/images/icon_user_10.png" />
+                    <h5>个人信息</h5></a>
+                <a href="{:U('My/addr')}"><img src="Public/m/images/icon_users_09.png" />
+                    <h5>地址管理</h5></a>
+                <a href="{:U('My/Favorite')}"><img src="Public/m/images/icon_user_06.png" />
+                    <h5>收藏</h5></a>
+                <a href="#"><img src="Public/m/images/icon_kf.png" />
+                    <h5>售后服务</h5></a>
+                 <a href="#"><img src="Public/m/images/icon_users_08.png" />
+                    <h5>提现管理</h5></a>
+            </div>
+            <div class="Distribution_M">
+                <div class="title_name">推广管理</div>
+                <ul class="Menu_list">
+                    <li>
+                        <a href="{:U('My/qrcode')}"><img src="Public/m/images/icon_users_06.png.png" />
+                            <h5>我的推广码</h5></a>
+                    </li>
+                    <if condition="$user['level'] gt 0">
+                    <li>
+                        <a href="{:U('Mch/index')}"><img src="Public/m/images/icon_fx_dp.png" />
+                            <h5>我的店铺</h5></a>
+                    </li>
+                    </if>
+                    <li>
+                        <a href="{:U('My/team')}"><img src="Public/m/images/team.png" />
+                            <h5>我的推广</h5></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 订单结束 -->
+    </div>
+</div>
+<include file="include/footer" />
+</body>
+
+</html>

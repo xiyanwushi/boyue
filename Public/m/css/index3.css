@@ -1,0 +1,379 @@
+@charset "utf-8";
+/* CSS Document */
+
+.lovo-header-home-wrapper {
+	width: 100%;
+	overflow: hidden;
+	z-index: 28;
+	position: fixed;
+    background: #fff;
+    top: 0px;
+}
+
+.lovo-search-container {
+	min-width: 320px;
+	max-width: 540px;
+	margin: 0 auto;
+	z-index: 10;
+	width: 100%;
+}
+
+.lovo-search-box-cover {
+	width: 100%;
+	height: 40px;
+	top: 0;
+	min-width: 320px;
+	max-width: 540px;
+	margin: 0 auto;
+}
+
+.lovo-search-container .lovo-search-box {
+	position: relative;
+	width: 100%;
+	height: 40px;
+}
+
+.lovo-search-box .lovo-search-tb {
+	margin: 0 5px;
+	height: 100%;
+	line-height: 40px;
+}
+
+.lovo-search-tb .lovo-search-icon {
+	display: inline-block;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	left: 10px;
+}
+
+.on-blur .lovo-search-icon-logo {
+	display: inline-block;
+	overflow: hidden;
+	margin-top: 2.5px;
+}
+
+.on-focus .lovo-search-icon-logo {
+	display: none;
+}
+
+.lovo-search-icon-logo i {
+	display: inline-block;
+	width: 70px;
+	height: 21px;
+	
+}
+
+.lovo-search-icon-cancel {
+	margin-top: 4px;
+	display: inline-block;
+}
+
+.lovo-search-icon-cancel i {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-position: -40px 0;
+}
+
+.on-blur .lovo-search-icon-cancel {
+	display: none;
+}
+
+.lovo-search-tb .lovo-search-form {
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+}
+
+
+.lovo-search-form-input {
+	height: 100%;
+	display: inline-block;
+	width: 80%;
+}
+
+.lovo-search-form-input input {
+	border: 0;
+	display: inline-block;
+	background: 0;
+	font-size: 13px;
+	line-height: 1.2em;
+	height: 1.2em;
+	width: 100%;
+	vertical-align: middle;
+	margin-top: -13px;
+	color: #666;
+	padding-left:8px;
+}
+
+.lovo-search-form-action {
+	position: absolute;
+	right: 10px;
+	width: 30px;
+	height: 30px;
+	top: 5px;
+	border-radius: 0 4px 4px 0;
+	border: 1px solid #bfbfbf;
+}
+
+.lovo-search-form-action span {
+	width: 15px;
+	height: 14px;
+	background-position: -83px 0;
+	margin: 7px 0 0 7px;
+}
+
+.lovo-search-icon-close {
+	width: 14px;
+	height: 12px;
+	background-position: -103px 0;
+	margin: 10px 0 0 5px;
+	position: absolute;
+	top: 4px;
+	right: 50px;
+}
+
+.on-blur .lovo-search-box-cover {
+	background: #fff;
+	opacity: 0;
+	position: absolute;
+}
+/*
+.on-blur .lovo-search-form {
+	margin-left: 80px;
+	padding-right: 120px;
+}
+*/
+.on-blur .lovo-search-form-box {
+	background: #eee;
+	
+	height: 30px;
+	margin-top: 5px;
+	overflow: hidden;
+}
+
+.on-blur .lovo-search-form-icon {
+	display: inline-block;
+}
+
+.on-blur .lovo-search-icon-close {
+	display: none!important;
+}
+
+.on-blur .lovo-search-form-input input {
+	color: #989191;
+}
+
+.on-focus {
+	display: block!important;
+	border-bottom: solid 1px;
+	border-image: url() 2 0 round;
+}
+
+.on-focus .lovo-search-box-cover {
+	background: #efefef;
+	position: absolute;
+}
+
+.on-focus .lovo-search-form {
+	margin-left: 30px;
+	padding-right: 30px;
+}
+
+.on-focus .lovo-search-form-box {
+	margin-right: 29px;
+}
+
+.on-focus .lovo-search-form-input {
+	background: #fff;
+	display: block;
+	margin-top: 5px;
+	width: 100%;
+	border-radius: 4px 0 0 4px;
+	overflow: hidden;
+	font-size: 12px;
+	border: 1px solid #bfbfbf;
+	height: 30px;
+	border-right: 0;
+}
+
+.on-focus .lovo-search-form-input input {
+	margin-left: 5px;
+}
+
+.on-focus .lovo-search-form-icon {
+	display: none;
+}
+
+.login-ing .lovo-search-icon-login {
+	display: inline-block;
+}
+
+.login-ing .lovo-search-icon-logined {
+	display: none;
+}
+
+.login-ed .lovo-search-icon-logined {
+	display: inline-block;
+}
+
+.login-ed .lovo-search-icon-login {
+	display: none;
+}
+
+.lovo-search-icon-logined i {
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	background-position: -127px -32px;
+	margin-top: 11px;
+	margin-left: 3px;
+}
+
+.lovo-search-container .lovo-search-login {
+    position: absolute;
+    right: 0px;
+    top: -2.5px;
+}
+
+.lovo-search-login .lovo-search-icon-login {
+	font-size: 15px;
+	color: #333;
+}
+
+.on-focus .lovo-search-login {
+	display: none;
+}
+
+.on-blur .lovo-search-login {
+	display: inline-block;
+}
+
+.on-blur .lovo-search-form-action {
+	display: none;
+}
+
+.on-focus .lovo-search-form-action {
+	display: inline-block;
+}
+
+.lovo-sprite-icon {
+	display: block;
+	background: url(../images/logo.png) no-repeat;
+	background-size: 100%;
+}
+.lovo-search-form-icon {
+	background:url(../images/ic_search.png) no-repeat;
+	width: 20px;
+	height: 20px;
+	margin-left: 8px;
+	background-size: 100%;
+}
+.floor {
+	font-size: 0;
+	width: 100%;
+}
+
+.bottom-bar-pannel {
+	position: fixed;
+	height: 44px;
+	z-index: 28;
+	bottom: 0;
+	left: 0;
+}
+
+.bottom-bar-pannel .floor-container {
+	overflow-x: hidden;
+	background-color: #fff;
+	box-shadow: 0 0 10px 0 rgba(155,143,143,0.6);
+	-webkit-box-shadow: 0 0 10px 0 rgba(155,143,143,0.6);
+	-moz-box-shadow: 0 0 10px 0 rgba(155,143,143,0.6);
+}
+
+.bottom-bar-pannel .bdr-top {
+	width: 100%;
+}
+
+.bottom-bar-pannel .tab4, .bottom-bar-pannel .tab5 {
+	height: 100%;
+	position: relative;
+}
+
+.bottom-bar-pannel .tab4 li {
+	text-align: center;
+	width: 25%;
+	float: left;
+	height: 100%;
+}
+
+.bottom-bar-pannel .tab5 li {
+	text-align: center;
+	width: 20%;
+	float: left;
+	height: 100%;
+}
+
+.bottom-bar-pannel .bar-img {
+	display: inline-block;
+	width: 57px;
+	height: 44px;
+}
+
+.bottom-bar-pannel .bar-img img {
+	max-height: 100%;
+	max-width: 100%;
+	width: auto;
+	overflow: hidden;
+}
+
+.bottom-bar-activity .bar-img {
+	position: fixed;
+	display: inline-block;
+	margin-left: -28px;
+	bottom: 0;
+	height: auto;
+	width: 57px;
+	left: 50%;
+	z-index: 29;
+}
+
+.bottom-bar-activity .bar-img img {
+	width: 100%;
+	height: auto;
+}
+
+.margin-space-v {
+	height: 100%;
+	display: inline-block;
+	width: 1.25%;
+	overflow: hidden;
+}
+
+.margin-space-v img {
+	width: 100%;
+	height: auto;
+}
+
+.margin-space-c img {
+	width: 100%;
+	height: auto;
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+	font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+	background: #f5f5f5;
+}

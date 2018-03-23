@@ -1,0 +1,33 @@
+ /*提示模板*/
+.coverBG,.coverBG2,.coverBG3,.coverBG4 {background:rgba(0,0,0 ,0.5);position:fixed;top:0;left:0;width:100%;height:100%;z-index:99999; }
+.cover,.cover2 {padding:10px 30px;overflow:hidden;margin-top:20%;}
+.coverCon,.coverCon2  { border-radius:5px;overflow:hidden; }
+.coverConLogo {padding:15px 0 11px;background:#ea423e; }
+.coverConLogo img{display:block;width:90px;height:90px;margin:0 auto; }
+.coverConWord {padding:15px;background:#fff;color:#999;font-size:12px; line-height:18px;text-align:center;}
+.coverConWordTitle {font-size:16px;font-weight:900;margin-bottom:10px; }
+.coverConWordBtn {display:block;background:#ea423e;width:80%;margin:15px auto 0;height:40px;line-height:40px;border-radius:5px;text-align:center;color:#fff;font-size:16px; }
+
+.coverBG2 {display:none; }
+.cover2 {margin-top:55%;}
+.coverConLeader {background:#fff;padding:20px 10px;position:relative;text-align:center;color:#666666;font-size:15px;line-height:26px; }
+.coverConLeaderClose{position:absolute;width:25px;height:25px;right:5px;top:5px; }
+.coverConLeaderLink {display:block;margin:15px auto 0;width:200px;height:37px;line-height:37px;border-radius:37px;text-align:center;color:#fff;font-weight:900;background:#da3232; }
+
+.coverBG3 .cover {margin-top:15%; }
+.coverConBanzhang {background:#fff;padding:10px;position:relative; }
+.coverConBanzhangClose,.coverConSponsorClose {position:absolute;right:10px;top:10px;display:block;width:15px;height:15px; }
+.coverConBanzhangTitle {font-size:26px; margin:10px 0 10px 0;text-align:center;color:#ea423b;border-bottom: 1px solid #ddd;}
+.coverConBanzhangCon {width:100%;margin:0 auto; line-height: 30px;    font-size: 14px;}
+.coverConBanzhangConTitle {font-size:14px; border-bottom:solid 1px #f4f4f4;padding-bottom:5px;}
+.coverConBanzhangConStep {font-size:12px;position:relative;}
+.coverConBanzhangConStep  span{display:inline-block;background:#ea423b;color:#fff;width:15px;height:15px;border-radius:50%;text-align:center;line-height:15px;position:absolute;left:0px; }
+.coverConBanzhangConStep b {font-size:14px;display:block;border-radius:5px;background:#eeeeee;color:#ea423b;text-align:center;padding:8px 0;margin:5px 0; }
+.coverConBanzhangImg,.coverConSponsorImg {display:block;width:70%;max-width:260px;margin:0 auto; }
+.coverConBanzhangCon .coverConBanzhangWord {font-size:12px;text-align:center; }
+
+.coverBG4 { display:none;}
+.coverBG4 .coverConSponsor{background:#fff; position:relative;padding:10px;font-size:14px;line-height:24px;text-align:center;}
+.coverConSponsorTitle {margin-bottom:5px; }
+.coverConSponsorCon {margin:10px 0;}
+.coverConSponsorWord {text-align:center;font-size:12px; }

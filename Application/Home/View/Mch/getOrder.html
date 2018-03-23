@@ -1,0 +1,44 @@
+<if condition="$list">
+<foreach name="list" item="v">
+<li>
+	<div class="ol-t"> 
+		<a href="{:U('Mch/orderDetail',array('order_id'=>$v['id']))}">订单号：{$v['sn']}</a> 
+	</div>
+	<div class="mb-ollm">
+	  <div class="ol-r">
+		<foreach name="v['cart']" item="val">
+			<a href="{:U('Mch/orderDetail',array('order_id'=>$v['id']))}" class="imgbox">
+				<img src="{$val['pic']}">&nbsp;
+			</a>
+		</foreach>
+		<p class="r-time"> 
+			订单时间：<span>{$v['create_time']|date="Y-m-d H:i:s",###}</span>
+			<span style="float:right">{:get_order_status($v['status'])}</span>
+		</p>
+	  </div>
+	</div>
+	<div class="ol-b">
+		<span class="red">总额：¥{$v['total']} {$_site['points_name']}:{$v['points_total']}</span>
+		<if condition="$v['status'] eq 2">
+			<a href="javascript:;" onclick="pShow({$v['id']})">发货</a>
+		</if>
+	</div>
+</li>
+</foreach>
+<else />
+	<if condition="$page eq 1">
+		<li>
+			<div class="empty" style="margin:auto;clear;height:80px;">
+				<img src="__PUBLIC__/m/images/no-more.png?a=b" class="no-more">
+				<span class="txt-nomore-msg">没有该类订单信息哦</span>
+			</div>
+		</li>
+	<else />
+		<li>
+			<div class="empty" style="margin:auto;clear;height:80px;">
+				<img src="__PUBLIC__/m/images/no-more.png?a=b" class="no-more">
+				<span class="txt-nomore-msg">没有更多啦</span>
+			</div>
+		</li>
+	</if>
+</if> 

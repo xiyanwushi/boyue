@@ -1,0 +1,78 @@
+html{font-size:12px!important}
+.mb-os ul li {
+	-webkit-box-flex: 1;
+	text-align: center;
+	position: relative;
+	font-size: 10px;
+}
+.w-btn {
+    background: #FF9;
+    margin: 10px 0px 10px 10px;
+    color: #c40001;
+    border-radius: 10px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    width: 80%;
+    display: block;
+}
+.fl{float:left}
+.fr{float:right}
+.rd{padding:10px;font-size:.5rem}
+.rd li{
+	height: 50px;
+	border-bottom: 1px #dbdada dashed; 
+	margin-top: 10px;
+	font-size:1.8em;
+}
+.sw {
+	background: #F14F43;
+	border-color: #F14F43;
+	border-radius: 5px;
+	min-width: 65px;
+	text-align: center;
+	color: #fff;
+	line-height: 20px;
+	height: 20px;
+	font-size: 12px;
+	margin: 8px 10px 10px 10px;
+}
+#wrapper{
+	top: 172px!important;
+}
+
+.popup {
+	background: rgba(0,0,0,0.7);
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.popup>div input[type=button] {
+
+	border: none;
+	border-radius: 5px;
+	width: 45%;
+	background: #6C8E8B;
+	color: #FFF;
+	margin-top: 10px;
+	height:2.0em;
+}
+.popup>div {
+   width: 80%;
+   background: rgba(255,255,255,0.8);
+   border-radius: 5px;
+   position: fixed;
+  _position:absolute;
+   z-index:1;
+   top: 30%;
+   left: 10%;
+   right: 10%;
+   padding: 20px 10px;
+   text-align: center;
+}
+.put{text-align: center;font-size: 12px;width: 70%;height:30px;border-radius:5px;border:1px solid black;}
+
+.fl{float:left}

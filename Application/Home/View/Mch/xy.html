@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no, address=no">
+<title>{$_site['name']}</title>
+<link href="__PUBLIC__/m/css/newall.css" rel="stylesheet" type="text/css">
+<link href="__PUBLIC__/layer/skin/layer.css" rel="stylesheet" type="text/css">
+<script src="__PUBLIC__/js/jquery-1.7.min.js"></script>
+<script src="__PUBLIC__/layer/layer.js"></script>
+<style>
+	.c-box{
+		height: 16px;
+		line-height: 16px;
+		text-align: center;
+	}
+	.c-box input[type="checkbox"]{
+	    border: 1px solid #ddd;
+		height: 16px;
+		width: 16px;
+		-webkit-appearance: checkbox;
+		border-radius:5px;
+	}
+	.c-box span{
+		line-height: 16px;
+		font-size: 13px;
+		color: #2b2222;
+		font-weight: bold;
+	}
+	.c-btn{
+		width: 50%;
+		margin: 20px 25%;
+		text-align: center;
+		height: 35px;
+		border: #FF9800;
+		background: #FF9800;
+		line-height: 35px;
+		color: #fff;
+		font-size: 15px;
+		border-radius: 7px;
+	}
+</style>
+</head>
+<body bgcolor="#fff">
+<div style="margin:20px 10px;">
+	{$_xy['info']}
+</div>
+<if condition="$user['ismch'] eq 0">
+<div class="c-box">
+	<input type="checkbox" id="xy" value="1" checked />
+	<span>我已阅读并同意上述协议及规则</span>
+</div>
+<div class="c-btn" onclick="check();">申	请	商	户</div>
+</if>
+<script>
+	function check(){
+		var check = $('#xy:checked').val();
+		if(!check){
+			layer.msg('请先同意协议规则');
+			return false;
+		}
+		location.href="{:U('Mch/sign')}";
+	}
+</script>
+<include file="include/footer" />
+</body>
+</html>

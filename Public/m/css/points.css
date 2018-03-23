@@ -1,0 +1,494 @@
+@charset "utf-8";
+/* CSS Document */
+body{background:#f5f5f5!important;}
+.mz {
+	width: 100%;
+	margin: auto;
+	max-width: 960px !important;
+}
+
+.mz img {
+	float: left
+}
+
+.YS2 .zhezhao {
+	border: 1px solid #ddd;
+	width: 100% !important;
+	height: 100% !important;
+	z-index: 11;
+	background-size: contain;
+}
+
+.YS2 .proimg {
+	float: left;
+	width: 100%!important;
+	padding: 4%;
+	margin: 0% 0 25% 0;
+}
+
+.YS2 .plr5 {
+	width: 100%;
+	z-index: 12 ;
+	position: absolute;
+	top: 85% ;
+	left: 0px ;
+}
+
+.YS2 .cmszch li {
+	width: 48% !important;
+	position: relative;
+	font-family: "微软雅黑"!important;
+	background: none !important;
+	margin: 1%;
+}
+
+.YS2 .cmszch li .proname {
+	font-family: "微软雅黑"!important;
+	font-size: 12px;
+	background: none;
+	height: 2em!important;
+	line-height: 2em!important;
+	position: absolute;
+	color: #000!important;
+	left: 7%;
+	opacity: 1;
+	width: 86%;
+	top: 79%!important;
+}
+
+.YS2 .dpj {
+    color: #000 !important;
+    text-decoration: line-through;
+    position: absolute;
+    top: 230%!important;
+    font-size: 0.6em;
+    z-index: -100;
+    text-align: left !important;
+    font-family: arial !important;
+    left: 37%!important;
+    font-size: .2rem;
+	width:0!important;
+}
+.YS2 .sjj {
+    color: #cf1032!important;
+    font-size: .9em;
+    text-align: left !important;
+    position: absolute;
+    top: 220%!important;
+    left: 4%!important;
+	font-size:.7rem;
+}
+.YS2 .gray, .YS2 .cmszch li .proname strong {
+	color: #000!important;
+	font-weight: normal
+}
+
+.YS1 .proimg {
+	float: left;
+	width: 100%!important;
+	padding: 3%;
+	margin: 0% 0 25% 0;
+}
+
+.YS1 .plr5 {
+	width: 100%!important;
+	z-index: 12 !important;
+	position: absolute!important;
+	top: 80% !important;
+	left: 0px !important;
+}
+
+.YS1 .cmszch li {
+	width: 48% !important;
+	position: relative;
+	font-family: "微软雅黑"!important;
+	background: none !important;
+	margin: 1%;
+}
+
+.YS1 .cmszch li .proname {
+	font-family: "微软雅黑"!important;
+	font-size: 14px;
+	background: none;
+	height: 2em!important;
+	line-height: 2em!important;
+	position: absolute;
+	color: #fff!important;
+	left: 7%;
+	opacity: 1;
+	width: 90%;
+	top: 70%!important;
+}
+
+.YS1 .dpj {
+	color: #fff!important;
+	text-decoration: line-through;
+	position: absolute;
+	top: 200%!important;
+	width: 50% !important;
+	font-size: 0.5em;
+	z-index: -100;
+	text-align: left !important;
+	font-family: arial !important;
+	left: 5%!important;
+}
+
+.YS1 .sjj {
+	color: #fff!important;
+	font-size: 1em;
+	text-align: left !important;
+	position: absolute;
+	top: 270%!important;
+	left: 5%!important;
+	width: 60% !important;
+}
+
+.YS1 .gray, .YS1 .cmszch li .proname strong {
+	color: #fff!important;
+	font-weight: normal
+}
+
+.cmszch .buy {
+	margin-top: 15px;
+	float: right;
+}
+
+.cmszch .btntext {
+	font-size: 0.8em;
+	color: #c40001
+}
+
+.zk {
+	width: 14%;
+	height: 14%;
+	z-index: 12;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+
+ul.cmszch {
+	margin: 0 auto
+}
+
+.cmszch li {
+	width: 49% !important;
+	position: relative;
+	font-family: "微软雅黑"!important;
+	background: none !important;
+	margin: 1% 0.5%;
+}
+
+.zhezhao {
+	background: left top no-repeat;
+	width: 100% !important;
+	height: 100%;
+	background-size: cover;
+	z-index: 11;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.proimg {
+	float: left;
+	width: 100%!important;
+	padding-bottom: 21%;
+}
+
+.cpt {
+	float: left;
+	width: 100%!important;
+	margin: 0px;
+}
+
+.plr5 {
+	width: 100%!important;
+	z-index: 12 !important;
+	position: absolute!important;
+	top: 76% !important;
+	left: 0px !important;
+}
+
+.plr5 p {
+	width: 100%;
+	line-height: 1em!important;
+	height: 1em!important;
+	color: #fff;
+	float: left;
+	text-align: center
+}
+
+.cmszch li .proname {
+	font-family: "微软雅黑"!important;
+	font-size: 12px;
+	background: none;
+	opacity: 1;
+	height: 2em!important;
+	line-height: 2em!important;
+	position: absolute;
+	background: #fff;
+	left: 0%;
+	opacity: 0.8;
+	width: 100%;
+	top: 80%;
+}
+
+.cmszch li .proname strong {
+}
+
+.bluesbtn, .btntext {
+    position: absolute;
+    right: 4%;
+    top: 220%;
+    width: 40px;
+    border: 1px solid #FF5722;
+    height: 25px;
+    border-radius: 5px;
+    background: #FF5722;
+    font-size: .4rem!important;
+    color: #fff!important;
+	line-height:25px;
+	text-align:center;
+}
+
+.sjj .gray {
+	color: #8d8d8d!important;
+	z-index: 11
+}
+
+.dpj {
+	color: #8d8d8d!important;
+	text-decoration: line-through;
+	position: absolute;
+	top: 240%;
+	right: 3%;
+	width: 70% !important;
+	font-size: 1em;
+	z-index: -100;
+	text-align: right !important;
+	font-family: arial !important;
+}
+
+.sjj {
+	color: #c91619!important;
+/* margin-top: 20px !important; */
+	font-size: 1em;
+	text-align: left !important;
+	position: absolute;
+	top: 220%;
+	left: 0%;
+	width: 60% !important;
+}
+
+.sjj font {
+	font-size: 1.2em;
+	font-family: arial !important;
+}
+
+.xinpin {
+	display: none!important;
+}
+
+.mwrap {
+	padding-bottom: 55px;
+	position: relative;
+}
+
+.topplace {
+	display: block;
+	width: 100%;
+	padding-top: 06%;
+}
+
+.left {
+	float: left;
+}
+
+.floatitems {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.floatitems img {
+	float: left;
+	display: block;
+	width: 100%;
+}
+
+.YS2 .cmszch li {
+	background-color: #fff!important;
+}
+
+.fourproduct .zhezhao {
+	background: url(//pic2.lowol.cn/upfiles/activity/lovo/1608ayjh/zch.jpg?a=bd ) left top no-repeat;
+}
+
+.fourproduct {
+	padding-left: 30px !important;
+}
+
+.YS2 {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.YS2 .proimg img {
+	width: 100%;
+	max-width: 300px;
+}
+
+.mooncakeWrap {
+	padding: 0 0 26px 0;
+}
+
+.fixbar {
+	position: fixed;
+	top: 0px;
+	left: 0;
+	right: 0;
+	z-index: 10010;
+}
+
+.fixbar img {
+	width: 25%;
+	float: left;
+}
+
+.miaosha {
+	width: 100%;
+	margin: auto;
+	display: block
+}
+
+.miaosha ul.time {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 48px;
+	display: block;
+	float: left;
+	overflow: hidden
+}
+
+.miaosha ul.time li {
+	margin: 0;
+	padding: 4PX;
+	width: 50%;
+	height: 48PX;
+	text-align: center;
+	display: inline-block;
+	line-height: 20px;
+	color: #fff;
+	float: left;
+	background: url(//pic2.lowol.cn/upfiles/activity/lovo/zhounian8f/ms_03.png) center center no-repeat;
+	background-size: cover;
+	font-size: 16px;
+	font-family: SimHei;
+}
+
+.miaosha ul.time li.on {
+	background: url(//pic2.lowol.cn/upfiles/activity/lovo/zhounian8f/ms_04.png) center center no-repeat;
+	background-size: cover;
+	color: #fcff00;
+}
+
+.miaosha ul.chanpin {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	display: block;
+}
+
+.miaosha ul.chanpin li {
+	width: 48%;
+	margin: 2% 1%;
+	padding: 0;
+	float: left;
+	position: relative;
+	padding-bottom: 3rem;
+}
+
+.miaosha ul.chanpin li .img {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	float: left
+}
+
+.miaosha ul.chanpin li .zhezhao {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: url(//pic2.lowol.cn/upfiles/activity/lovo/zhounian8f/ms_07.png) center center no-repeat;
+	z-index: 2;
+	background-size: cover;
+}
+
+.miaosha ul.chanpin li .no {
+	background: url(//pic2.lowol.cn/upfiles/activity/lovo/zhounian8f/ms_112.png) center center no-repeat;
+	background-size: cover;
+}
+
+.miaosha ul.chanpin li .wait {
+	background: url(//pic2.lowol.cn/upfiles/activity/lovo/zhounian8f/ms_111.png) center center no-repeat;
+	background-size: cover;
+}
+
+.miaosha ul.chanpin li .over {
+	background: url(//pic2.lowol.cn/upfiles/activity/lovo/zhounian8f/ms_11.png) center center no-repeat;
+	background-size: cover;
+}
+
+.miaosha ul.chanpin li .name {
+	width: 100%;
+	position: absolute;
+	bottom: 2.1rem;
+	left: 0;
+	text-align: center;
+	color: #fff;
+	font-size: .7rem;
+	z-index: 3;
+	height: 1rem;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	line-height: 1rem;
+}
+
+.miaosha ul.chanpin li .money {
+	width: 100%;
+	height: 1rem;
+	line-height: 1rem;
+	color: #fff;
+	font-size: .7rem;
+	position: absolute;
+	bottom: .6rem;
+	left: 0;
+	z-index: 3;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: bottom;
+	padding-right: 1.4rem;
+}
+
+.miaosha ul.chanpin li .money .mc {
+	font-size: .6rem;
+	line-height: 1rem;
+	display: -webkit-inline-box;
+}
+
+.miaosha ul.chanpin li .money .mq {
+	font-size: .6rem;
+	line-height: 1rem;
+	display: -webkit-inline-box;
+}
+
+.miaosha ul.chanpin li .money .ms {
+	font-size: .8rem;
+	line-height: 1rem;
+	display: -webkit-inline-box;
+}

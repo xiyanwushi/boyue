@@ -1,0 +1,55 @@
+<header>
+	<div class="m_common_new_top">
+		<div id="m_common_header">
+			<header class="header">
+				<div class="header-new-bar">
+					<div id="m_common_header_goback" class="header-icon-back">
+						<a href="javascript:history.go(-1)"><span></span></a>
+					</div>
+					<div class="header-title" id="headerTitle">产品详情</div>
+					<div id="m_common_header_jdkey" class="header-icon-shortcut L_ping">
+						<a class="click" id="click_common_header_shortcut" onclick="headerShortcut();">
+							<span></span>
+						</a>
+					</div>
+					<div class="header-bar-border"></div>
+				</div>
+				<ul id="m_common_header_shortcut" class="header-shortcut" style="display: none;">
+					<li id="m_common_header_shortcut_m_index">
+						<a class="L_ping" href="{:U('Index/index')}">
+							<span class="shortcut-home"></span>
+							<strong>首页</strong>
+						</a>
+					</li>
+					<li class="L_ping" id="m_common_header_shortcut_category_search">
+						<a href="{:U('Index/cates')}">
+							<span class="shortcut-categories"></span>
+							<strong>分类</strong>
+						</a>
+					</li>
+					<li class="L_ping" report-eventid="MCommonHead_Cart" id="">
+						<a href="{:U('Index/cart')}">
+							<span class="shortcut-cart"></span>
+							<strong>购物车</strong>
+						</a>
+					</li>
+					<li id="m_common_header_shortcut_h_home" class=" current">
+						<a class="L_ping" href="{:U('My/index')}">
+							<span class="shortcut-my-account"></span>
+							<strong>个人中心</strong>
+						</a>
+					</li>
+				</ul>
+			</header>
+		</div>
+	</div>
+</header>
+<script>
+	var title ="[title]";
+	if(title!=''){
+		$('#headerTitle').html(title);
+	}
+	function headerShortcut(){
+		$('.header-shortcut').toggle();
+	}
+</script>

@@ -1,0 +1,253 @@
+html ,body{margin:0;padding:0}
+
+/**轮播图**/
+.focus{ width:100%;  margin:0 auto; position:relative; overflow:hidden;   }
+.focus .hd{ width:100%; height:11px;  position:absolute; z-index:1; bottom:5px; text-align:center;  }
+.focus .hd ul{ display:inline-block; height:5px; padding:3px 5px; background-color:rgba(255,255,255,0.7); 
+	-webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; font-size:0; vertical-align:top;
+	box-sizing:content-box;
+}
+.focus .hd ul li{ display:inline-block; width:5px; height:5px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; background:#8C8C8C; margin:0 5px;  vertical-align:top; overflow:hidden;   }
+.focus .hd ul .on{ background:#FE6C9C;  }
+
+.focus .bd{ position:relative; z-index:0;height:200px; }
+.focus .bd li img{ width:100%;height:200px;}
+.focus .bd li a{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* 取消链接高亮 */  }
+.index-item .title{ white-space:nowrap; text-overflow:ellipsis; overflow:hidden; padding-left:10px;}
+
+.fl{float:left}
+.fr{float:right}
+
+.index-one{
+	width: 100%;
+    height: 60px;
+    border-bottom: 1px #eeeeee solid;
+    border-top: 1px #eee solid;
+    overflow: hidden;
+    background: url(../images/ss_ct.jpg) center no-repeat;
+    background-size: auto 100%;
+}
+.index-one  .one, .two{
+	width:50%;
+	text-align:center;
+	color:#777777;
+}
+.index-one  .one div, .two div{
+	font-size:1em;
+	line-height:1.2em;
+	margin-top:10px;
+}
+.index-two {
+    background: url(../images/itembg1.png) repeat-y 0 0;
+    background-size: 100%;
+    height: 60px;
+    margin: 3%;
+    position: relative;
+}
+.xm{
+	width:100%;
+	background: #eeeeee;
+}
+.xm .title{
+    width: 100%;
+    margin: auto;
+    font-size: 1em;
+    height: 20px;
+    line-height: 20px;
+    padding: 2%;
+    background: #3E9DE8;
+    color: #fff;
+}
+
+.index_news .title{
+    width: 100%;
+    margin: auto;
+    font-size: 1em;
+    height: 20px;
+    line-height: 20px;
+    padding: 2%;
+    background: #3E9DE8;
+    color: #fff;
+}
+
+.menu_at {
+    color: #3278b3!important;
+}
+
+.index_type{width:100%;position:relative;padding-top:15px;background:#eeeeee;padding-bottom:15px;}
+.index_type_tltle {
+    width: calc(100% - 30px);
+    margin: auto;
+    font-size: 0.9em;
+    height: 20px;
+    line-height: 32px;
+}
+.index_type_li{width:100%;height:80px;background:#ffffff;border-bottom:1px solid #eee;}
+.index_type_li_left{float:left;width:40px;height:40px;margin-left:15px;margin-top:20px;}
+.index_type_li_center{float:left;margin-left:15px;}
+.index_type_li_center_title{font-size:1em;line-height:28px;margin-top:15px;}
+.index_type_li_center_des{font-size:1em;color:#777777}
+.index_type_li_right{float:right;text-align:right;margin-right:15px;height:20px;font-size:0.8em;line-height:20px;margin-top:30px;color:#555555}
+.index_type_li_right img{width:0.8em;height:0.8em;margin-left:4px;}
+
+/*foot_menu*/
+.foot_menu{width:100%;height:49px;}
+.foot_menu_fixed{position:fixed;width:100%;height:48px;left:0px;bottom:0px;background:#ffffff;box-shadow: 0px 0px 8px #c1c1c1;}
+.foot_menu_fixed_li{float:left;width:25%;height:100%;color:#333333}
+.foot_menu_fixed_tb{width:100%;text-align:center;font-size:1em;height:18px;margin-top:6px;}
+.foot_menu_fixed_name{width:100%;line-height:18px;font-size:0.8em;text-align:center;}
+
+
+.ho_hd{width:100%;height:48px;border-bottom:1px #eee solid;background:#f9f9f9}
+.ho_hd_left{float:left;width:40px;height:100%;background:url(../images/goBack.png) center no-repeat;background-size:24px 24px;}
+.ho_hd_title{float:left;width:calc(100% - 80px);line-height:48px;height:48px;font-size:16px;color:#333;text-align:center;overflow:hidden}
+.ho_hd_right{float:right;width:40px;height:100%;}
+
+
+.index_news{width:100%;height:180px;}
+.index_news_con{width:100%;}
+.index_news_con_li{width:100%;height:34px;line-height:34px;font-size:1em}
+.index_news_con_li_name{float:left;text-align:center;margin-left:15px;width:calc(24% - 15px);font-size: 0.8em;}
+.index_news_con_li_phone{float:left;text-align:center;width:40%;font-size: 0.8em;}
+.index_news_con_li_day{float:left;text-align:center;width:36%;font-size: 0.8em;}
+
+
+.sign-title{
+	line-height: 40px;
+    padding-left: 15px;
+    font-size: 16px;
+    color: #2a80c3;
+}
+.sign-one{
+	width:100%;
+	height:100px;
+	border-bottom: 1px #f4f4f4 solid;
+    padding-bottom: 20px;
+}
+.sign-one .sign-up{
+	float: left;
+    width: 78px;
+    height: 100%;
+    margin-left: 15px;
+    border: 1px #eee dashed;
+    text-align: center;
+    overflow: hidden;
+}
+.sign-one div:nth-child(1){
+    background: #ddd;
+	position:relative;
+}
+.sign-one div:nth-child(1) img{
+	width: 26px;
+    height: 26px;
+    margin-top: 25px;
+}
+.sign-one div:nth-child(1) div{
+	width: 100%;
+    font-size: 14px;
+    color: #555555;
+}
+.sign-one div:nth-child(2) span{
+	line-height: 100px;
+    font-size: 12px;
+    color: #777777;
+}
+.sign-one div:nth-child(3){
+	float:right;
+	margin-right:15px;
+}
+.sign-one div:nth-child(3) img{
+	width:78px;
+	height:100%;
+}
+.sign-two{
+	width: 100%;
+}
+.sign-two div{
+	width:33.3%;
+	height:50px;
+	float:left;
+}
+.sign-two div span{
+	display: block;
+    width: 80%;
+    height: 30px;
+    margin: 10px 10%;
+    line-height: 30px;
+    text-align: center;
+    background: #ddd;
+    border-radius: 6px;
+    color: #333;
+    font-size: 14px;
+}
+
+.sign-four{
+	width: 100%;
+}
+.sign-four div{
+	width:33.3%;
+	height:50px;
+	float:left;
+}
+.sign-four div span{
+	display: block;
+    width: 80%;
+    height: 30px;
+    margin: 10px 10%;
+    line-height: 30px;
+    text-align: center;
+    background: #ddd;
+    border-radius: 6px;
+    color: #333;
+    font-size: 14px;
+}
+.sign-btn{
+	clear: both;
+    height: 40px;
+    width: 80%;
+    margin: 30px 10%;
+    text-align: center;
+    line-height: 40px;
+    background: #FFC107;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 10px;
+}
+.sign-three{
+	width: 80%;
+    margin: 50px 10%
+}
+.sign-three .min-money{
+	margin-top: 15px;
+    display: block;
+    margin-left: -10px;
+    width: 20%;
+    float: left;
+	color:#b1a4a4;
+}
+.sign-three .max-money{
+	margin-top: 15px;
+    display: block;
+    margin-right: -10px;
+    width: 20%;
+    float: right;
+	color:#b1a4a4;
+}
+.clearDiv{
+    height: 20px;
+    clear: both;
+    border-bottom: 1px solid #f4f4f4;
+}
+.active{
+	background:#2196F3!important;
+	color:#fff!important;
+}
+.upload-file{
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    position: absolute;
+    top: 0;
+}

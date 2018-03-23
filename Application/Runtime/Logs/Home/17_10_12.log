@@ -1,0 +1,419 @@
+[ 2017-10-12T13:04:37+08:00 ] 127.0.0.1 /?user_id=10001
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.018000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dd_mch_order` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `dd_mch_order` WHERE `delivery_time` < 1507179877 AND `status` = 3  [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 2 for Common\Util\ddwechat::setParam(), called in C:\WWW\Application\Home\Controller\HomeController.class.php on line 102 and defined C:\WWW\Application\Common\Util\ddwechat.class.php 第 39 行.
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(1,feature) order by sort desc [ RunTime:0.0030s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(2,feature) order by sort desc [ RunTime:0.0180s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(3,feature) order by sort desc [ RunTime:0.0110s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(4,feature) order by sort desc [ RunTime:0.0020s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(5,feature) order by sort desc [ RunTime:0.0030s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(6,feature) order by sort desc [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `dd_ad` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_ad` WHERE `ad` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dd_ad` WHERE `ad` IN (2,3)  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_ad` WHERE `ad` IN (4,5,6)  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-10-12T13:04:39+08:00 ] 127.0.0.1 /index.php?m=&c=Ajax&a=data
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: user_id C:\WWW\Application\Home\Controller\HomeController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_mch_order` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_mch_order` WHERE `delivery_time` < 1507179878 AND `status` = 3  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Common\Util\ddwechat::setParam(), called in C:\WWW\Application\Home\Controller\HomeController.class.php on line 102 and defined C:\WWW\Application\Common\Util\ddwechat.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `dd_data` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `dd_data` WHERE ( date=20171011 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dd_mch_order` WHERE `create_time` BETWEEN 1507651200 AND 1507737600 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(points_total) AS tp_sum FROM `dd_mch_order` WHERE `pay_time` BETWEEN 1507651200 AND 1507737600 AND `status` > 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(wxpay) AS tp_sum FROM `dd_mch_order` WHERE `pay_time` BETWEEN 1507651200 AND 1507737600 AND `status` > 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT SUM(moneypay) AS tp_sum FROM `dd_mch_order` WHERE `pay_time` BETWEEN 1507651200 AND 1507737600 AND `status` > 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `dd_data` (`orders`,`points`,`wxpay`,`moneypay`,`date`) VALUES ('0',NULL,NULL,NULL,'20171011') [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-10-12T13:06:38+08:00 ] 127.0.0.1 /?user_id=10001
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dd_mch_order` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `dd_mch_order` WHERE `delivery_time` < 1507179998 AND `status` = 3  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Common\Util\ddwechat::setParam(), called in C:\WWW\06db\Application\Home\Controller\HomeController.class.php on line 102 and defined C:\WWW\06db\Application\Common\Util\ddwechat.class.php 第 39 行.
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(1,feature) order by sort desc [ RunTime:0.0010s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(2,feature) order by sort desc [ RunTime:0.0090s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(3,feature) order by sort desc [ RunTime:0.0040s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(4,feature) order by sort desc [ RunTime:0.0010s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(5,feature) order by sort desc [ RunTime:0.0010s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(6,feature) order by sort desc [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `dd_ad` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `dd_ad` WHERE `ad` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dd_ad` WHERE `ad` IN (2,3)  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_ad` WHERE `ad` IN (4,5,6)  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-10-12T13:06:40+08:00 ] 127.0.0.1 /index.php?m=&c=Ajax&a=data
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: user_id C:\WWW\06db\Application\Home\Controller\HomeController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_mch_order` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_mch_order` WHERE `delivery_time` < 1507179999 AND `status` = 3  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Common\Util\ddwechat::setParam(), called in C:\WWW\06db\Application\Home\Controller\HomeController.class.php on line 102 and defined C:\WWW\06db\Application\Common\Util\ddwechat.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `dd_data` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `dd_data` WHERE ( date=20171011 ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-10-12T13:09:48+08:00 ] 127.0.0.1 /index.php?m=&c=Index&a=cates
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: user_id C:\WWW\06db\Application\Home\Controller\HomeController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dd_mch_order` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `dd_mch_order` WHERE `delivery_time` < 1507180187 AND `status` = 3  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Common\Util\ddwechat::setParam(), called in C:\WWW\06db\Application\Home\Controller\HomeController.class.php on line 102 and defined C:\WWW\06db\Application\Common\Util\ddwechat.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `dd_product_cate` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `dd_product_cate` ORDER BY sort desc  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-10-12T13:09:48+08:00 ] 127.0.0.1 /index.php?m=&c=Ajax&a=data
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: user_id C:\WWW\06db\Application\Home\Controller\HomeController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dd_mch_order` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `dd_mch_order` WHERE `delivery_time` < 1507180188 AND `status` = 3  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Common\Util\ddwechat::setParam(), called in C:\WWW\06db\Application\Home\Controller\HomeController.class.php on line 102 and defined C:\WWW\06db\Application\Common\Util\ddwechat.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `dd_data` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `dd_data` WHERE ( date=20171011 ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-10-12T13:10:04+08:00 ] 127.0.0.1 /index.php?m=&c=Ajax&a=data
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: user_id C:\WWW\06db\Application\Home\Controller\HomeController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dd_mch_order` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `dd_mch_order` WHERE `delivery_time` < 1507180204 AND `status` = 3  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 2 for Common\Util\ddwechat::setParam(), called in C:\WWW\06db\Application\Home\Controller\HomeController.class.php on line 102 and defined C:\WWW\06db\Application\Common\Util\ddwechat.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `dd_data` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_data` WHERE ( date=20171011 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-10-12T13:10:05+08:00 ] 127.0.0.1 /index.php?m=&c=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: user_id C:\WWW\06db\Application\Home\Controller\HomeController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dd_mch_order` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `dd_mch_order` WHERE `delivery_time` < 1507180205 AND `status` = 3  [ RunTime:0.0040s ]
+NOTIC: [2] Missing argument 2 for Common\Util\ddwechat::setParam(), called in C:\WWW\06db\Application\Home\Controller\HomeController.class.php on line 102 and defined C:\WWW\06db\Application\Common\Util\ddwechat.class.php 第 39 行.
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(1,feature) order by sort desc [ RunTime:0.0030s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(2,feature) order by sort desc [ RunTime:0.0220s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(3,feature) order by sort desc [ RunTime:0.0110s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(4,feature) order by sort desc [ RunTime:0.0020s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(5,feature) order by sort desc [ RunTime:0.0020s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(6,feature) order by sort desc [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `dd_ad` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `dd_ad` WHERE `ad` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_ad` WHERE `ad` IN (2,3)  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_ad` WHERE `ad` IN (4,5,6)  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-10-12T13:10:06+08:00 ] 127.0.0.1 /index.php?m=&c=Ajax&a=data
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: user_id C:\WWW\06db\Application\Home\Controller\HomeController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_mch_order` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_mch_order` WHERE `delivery_time` < 1507180206 AND `status` = 3  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 2 for Common\Util\ddwechat::setParam(), called in C:\WWW\06db\Application\Home\Controller\HomeController.class.php on line 102 and defined C:\WWW\06db\Application\Common\Util\ddwechat.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `dd_data` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_data` WHERE ( date=20171011 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-10-12T13:10:11+08:00 ] 127.0.0.1 /index.php?m=&c=Index&a=cates
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: user_id C:\WWW\06db\Application\Home\Controller\HomeController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `dd_mch_order` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `dd_mch_order` WHERE `delivery_time` < 1507180211 AND `status` = 3  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Common\Util\ddwechat::setParam(), called in C:\WWW\06db\Application\Home\Controller\HomeController.class.php on line 102 and defined C:\WWW\06db\Application\Common\Util\ddwechat.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `dd_product_cate` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `dd_product_cate` ORDER BY sort desc  [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-10-12T13:10:11+08:00 ] 127.0.0.1 /index.php?m=&c=Ajax&a=data
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: user_id C:\WWW\06db\Application\Home\Controller\HomeController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_mch_order` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `dd_mch_order` WHERE `delivery_time` < 1507180211 AND `status` = 3  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 2 for Common\Util\ddwechat::setParam(), called in C:\WWW\06db\Application\Home\Controller\HomeController.class.php on line 102 and defined C:\WWW\06db\Application\Common\Util\ddwechat.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `dd_data` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `dd_data` WHERE ( date=20171011 ) LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-10-12T13:10:21+08:00 ] 127.0.0.1 /index.php?m=&c=Index&a=cart
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: user_id C:\WWW\06db\Application\Home\Controller\HomeController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `dd_mch_order` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `dd_mch_order` WHERE `delivery_time` < 1507180221 AND `status` = 3  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Common\Util\ddwechat::setParam(), called in C:\WWW\06db\Application\Home\Controller\HomeController.class.php on line 102 and defined C:\WWW\06db\Application\Common\Util\ddwechat.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `dd_cart` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `dd_cart` WHERE `user_id` = 10001 AND `order_id` = 0  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `dd_product` [ RunTime:0.0090s ]
+NOTIC: [8] Undefined variable: where C:\WWW\06db\Application\Home\Controller\IndexController.class.php 第 75 行.
+SQL: SELECT * FROM `dd_product` ORDER BY rand() LIMIT 4   [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `dd_addr` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `dd_addr` WHERE `user_id` = 10001 AND `is_default` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dd_addr` WHERE `id` = 123 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Array to string conversion C:\WWW\06db\Application\Runtime\Cache\Home\2a19e4d8489cbec7911ac8159368948d.php 第 22 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-10-12T13:10:22+08:00 ] 127.0.0.1 /index.php?m=&c=Ajax&a=get_cart_total
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: user_id C:\WWW\06db\Application\Home\Controller\HomeController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_mch_order` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_mch_order` WHERE `delivery_time` < 1507180221 AND `status` = 3  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Common\Util\ddwechat::setParam(), called in C:\WWW\06db\Application\Home\Controller\HomeController.class.php on line 102 and defined C:\WWW\06db\Application\Common\Util\ddwechat.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `dd_cart` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `dd_cart` WHERE `id` IN ('')  [ RunTime:0.0010s ]
+
+[ 2017-10-12T13:10:33+08:00 ] 127.0.0.1 /index.php?m=&c=Ajax&a=data
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: user_id C:\WWW\06db\Application\Home\Controller\HomeController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_mch_order` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_mch_order` WHERE `delivery_time` < 1507180233 AND `status` = 3  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 2 for Common\Util\ddwechat::setParam(), called in C:\WWW\06db\Application\Home\Controller\HomeController.class.php on line 102 and defined C:\WWW\06db\Application\Common\Util\ddwechat.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `dd_data` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_data` WHERE ( date=20171011 ) LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-10-12T13:10:35+08:00 ] 127.0.0.1 /index.php?m=&c=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: user_id C:\WWW\06db\Application\Home\Controller\HomeController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `dd_mch_order` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `dd_mch_order` WHERE `delivery_time` < 1507180235 AND `status` = 3  [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 2 for Common\Util\ddwechat::setParam(), called in C:\WWW\06db\Application\Home\Controller\HomeController.class.php on line 102 and defined C:\WWW\06db\Application\Common\Util\ddwechat.class.php 第 39 行.
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(1,feature) order by sort desc [ RunTime:0.0030s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(2,feature) order by sort desc [ RunTime:0.0170s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(3,feature) order by sort desc [ RunTime:0.0130s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(4,feature) order by sort desc [ RunTime:0.0060s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(5,feature) order by sort desc [ RunTime:0.0030s ]
+SQL: SELECT * FROM dd_product WHERE status=1 and  find_in_set(6,feature) order by sort desc [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `dd_ad` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `dd_ad` WHERE `ad` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `dd_ad` WHERE `ad` IN (2,3)  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_ad` WHERE `ad` IN (4,5,6)  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-10-12T13:10:36+08:00 ] 127.0.0.1 /index.php?m=&c=Ajax&a=data
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: user_id C:\WWW\06db\Application\Home\Controller\HomeController.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_mch_order` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_mch_order` WHERE `delivery_time` < 1507180235 AND `status` = 3  [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 2 for Common\Util\ddwechat::setParam(), called in C:\WWW\06db\Application\Home\Controller\HomeController.class.php on line 102 and defined C:\WWW\06db\Application\Common\Util\ddwechat.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `dd_data` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `dd_data` WHERE ( date=20171011 ) LIMIT 1   [ RunTime:0.0010s ]
+

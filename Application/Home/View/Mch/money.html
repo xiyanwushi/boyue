@@ -1,0 +1,74 @@
+<include file="include/head" />
+<link href="__PUBLIC__/m/css/iscroll.css" rel="stylesheet" type="text/css">
+<link href="__PUBLIC__/m/css/record.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__PUBLIC__/m/js/iscroll.js"></script>
+<include file="include/header" title="我的账户" />
+<style>
+#wrapper {
+    top: 80px!important;
+}
+.w-btn {
+    background: #FF9;
+    color: #c40001;
+    border-radius: 10px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    width: 80px;
+    display: block;
+    position: absolute;
+    top: 22%;
+    right: 2%;
+}
+.rd li {
+    margin-top: 2px;
+}
+.sw {
+    margin: 15px 10px 10px 10px;
+}
+.rd li {
+    height: 65px;
+}
+</style>
+<div style="display: block;" class="landscape">
+	<div class="main">
+	    <div class="mb-os">
+	    	<ul>
+				<if condition="$_GET['type'] eq 1">
+	       		<li style="line-height: 30px;background: #c40001;text-align: left;padding-left: 5px;color:#fff">
+	       			总分销<b style="font-size:1.8em; color:#FC3">{$separate|default="0.00"}{$_site['points_name']}</b>&nbsp; 
+					预收分销<b style="font-size:1.8em;color:#FC3">{$yj_separate|default="0.00"}{$_site['points_name']}</b>
+	       		</li>
+				<else />
+				<li style="line-height: 30px;background: #c40001;text-align: left;padding-left: 5px;color:#fff">
+	       			总团队<b style="font-size:1.8em; color:#FC3">{$separate|default="0.00"}{$_site['points_name']}</b>&nbsp; 
+					预收团队<b style="font-size:1.8em;color:#FC3">{$yj_separate|default="0.00"}{$_site['points_name']}</b>
+	       		</li>
+				</if>
+			</ul>
+	    </div>
+     	<div class="c-clild">
+			<div class="mainCont">
+				<div id="wrapper" style="overflow: hidden; left: 0px;">
+					<div id="scroller" style="transform-origin: 0px 0px 0px; position: absolute; top: 0px; left: 0px;">
+						<ul class="rd">
+							
+						</ul>
+						<div class="more"><i class="pull_icon"></i><span>上拉加载...</span></div>
+					</div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<!--  -->
+<div class="mask" id="loading"><img src="__PUBLIC__/m/images/loading-grey.gif" style="position: fixed;_position:absolute;margin-left:-20px;left:50%;top:45%;"></div>
+<include file="include/footer" />
+<script>
+	var type = "{$_GET['type']}";
+</script>
+<script type="text/javascript" src="__PUBLIC__/m/js/MchMoney.js"></script>
+</body>
+</html>

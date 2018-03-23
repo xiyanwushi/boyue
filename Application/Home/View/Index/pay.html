@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no">
+<title>微信安全支付</title>
+<link href="__PUBLIC__/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/plugins/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/css/store.css?bc" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/css/user.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/m/css/newall.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/layer/skin/layer.css" rel="stylesheet" type="text/css">
+<script src="__PUBLIC__/js/jquery-1.7.min.js"></script>
+<script src="__PUBLIC__/layer/layer.js"></script>
+
+</head>
+<style>
+.pay-info p{font-size:14px;line-height:14px;margin-top:5px;margin-bottom:10px;}
+.header {color: #fff;}
+</style>
+<body>
+	<div class="header-blank"></div>
+    <div class="header">
+		订单安全支付
+	</div>
+	
+	<div class="pay-main">
+		<div class="pay-tips">点击立即支付可进行付款</div>
+		<div class="pay-info">
+			<p>
+				订单在线支付,金额：￥{$info['wxpay']}
+			</p>
+			<p>
+				订单编号：{$info['sn']}
+			</p>
+			<p>
+				支付说明：系统优先使用自身的重销{$_site['points_name']}支付{$_site['points_name']}，
+					若重销{$_site['points_name']}不足，则使用自身{$_site['points_name']}支付{$_site['points_name']}，
+					若重销{$_site['points_name']}和自身{$_site['points_name']}都不足支付{$_site['points_name']}，则可使用现金比例进行支付。
+			</p>
+		</div>
+		
+		<div class="pay-repay" id="pay" style="display:block">
+			<a href="javascript:;" onclick="doPay()">立即支付</a>
+		</div>
+		<div class="pay-repay" id="repay">
+			<a href="javascript:;" onclick="doPay()">重新支付</a>
+		</div>
+	</div>
+	
+	<include file="include/footer" />
+	<script type="text/javascript">
+		function doPay(){
+			$('#pay').hide();
+			$.post("{:U('Ajax/pay')}",{order_id:"{$info['id']}"},function(d){
+				if(d){
+					console.log(d);
+					if(d.status){
+						var jsApiParameters = eval('(' +d.info + ')');
+						WeixinJSBridge.invoke(
+							'getBrandWCPayRequest',
+							jsApiParameters,
+							function(res){
+								WeixinJSBridge.log(res.err_msg);
+								if(res.err_msg == "get_brand_wcpay_request:ok"){
+									location.href="{:U('Index/orderDetail')}&order_id="+"{$info['id']}";
+								}else if(res.err_msg == "get_brand_wcpay_request:cancel"){
+									$('#repay').show();		
+								}else{
+									layer.alert("调用微信支付失败："+res.err_msg);
+									$('#repay').show();
+								}
+							}
+						);
+					}else{
+						layer.msg(d.info,{icon:5});
+					}
+				}else{
+					layer.msg('网络异常',{icon:5});
+				}				
+			})
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<if condition="$list">
+<foreach name="list" item="v">
+<li>
+	<div class="headimg"><img src="{$v['headimg']}" /></div>
+	<div class="tboxR">
+		<p class="clearfix BoxRTop">
+			<b class="fl">{$v['nickname']}</b>
+			<span class="fr BoxRTopStep2" style="background:#FF5722">贡献+{$v['separate']|default="0.00"}</span>
+		</p>
+		<p class="BoxRMid">
+			关注时间：<if condition="$v['sub_time']">{$v['sub_time']|date="Y-m-d H:i:s",###}<else />-</if>
+			<span class="fr BoxRTopStep2">{$v['team']|default="0"}成员</span>
+		</p>
+		<p class="BoxRBtm">
+			<if condition="$v['isvalid']">有效代理<else />非有效代理</if>
+		</p>
+	</div>
+</li>
+</foreach>
+<else />
+	<if condition="$page eq 1">
+		<li>
+			<div class="empty" style="margin:auto;clear;height:80px;">
+				<img src="__PUBLIC__/m/images/no-more.png?a=b" class="no-more">
+				<span class="txt-nomore-msg">没有下级团队信息</span>
+			</div>
+		</li>
+	<else />
+		<li>
+			<div class="empty" style="margin:auto;clear;height:80px;">
+				<img src="__PUBLIC__/m/images/no-more.png?a=b" class="no-more">
+				<span class="txt-nomore-msg">没有更多啦</span>
+			</div>
+		</li>
+	</if>
+	
+</if> 

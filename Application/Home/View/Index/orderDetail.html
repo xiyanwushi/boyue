@@ -1,0 +1,141 @@
+<include file="include/head" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/m/css/buy.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/m/css/orderdetail.css">
+<include file="include/header" title="订单详情" />
+<style>
+.wul {
+    position: absolute!important;
+    right: 18%;
+    width: 60px;
+    background: #D48A1D;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+    top: 28%;
+    font-size: 12px;
+}
+.item .price {
+    font-size: 1.45rem;
+}
+.status-2{
+	float: right;
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    width: 120px;
+    text-align: center;
+    line-height: 22px;
+    background: #FF5722;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 12px;
+}
+</style>
+<section class="content" style="margin-top: 42px;">
+	<div class="active">
+		<div class="wrap order-buy">
+			<div class="mainCont" id="checkMain">
+				<section class="order " id="order15">
+					<section class="order-info" style="border-bottom:none">
+						<div class="b-box">
+							<p class="title">订单号：{$info['sn']} </p>
+							<p class="title">下单时间：{$info['create_time']|date="Y-m-d H:i:s",###}</p>
+						</div>
+						<div class="order-list">
+							<ul class="order-list-info">
+								<foreach name="info['cart']" item="v">
+								<li class="item " id="item14">
+									
+									<div class="itemInfo list-info" id="itemInfo13">	
+										<div class="list-img" style="position:relative;">
+											<a href="{:U('Index/product',array('id'=>$v['product_id']))}">
+												<img src="{$v['pic']}">
+											</a>
+										</div>
+										
+										<div class="list-cont" style="position:relative;">
+											<h5 class="goods-title">{$v['title']}</h5>
+											<p class="godds-specification">运费:{$v['logis_fee']} 
+												<if condition="$v['is_zq'] neq 1">
+												<br>单件最高抵扣积分:{$v['points']}
+												</if>
+											</p>
+											<div class="itemPay list-price-nums" id="itemPay6">
+												<if condition="$v['is_zq'] neq 1">
+													<p class="price">¥{$v['price']+($v['points']*$_site['points_rate']/100)}</p>
+												<else />
+													<p class="price">∮{$v['zq_points']}</p>
+												</if>												
+												<p class="nums">x{$v['nums']}</p>
+												<if condition="$v['status'] eq -1"><span class="status-2">申请退货，等待审核</span></if>
+											</div>
+										</div>
+									</div>
+								</li>
+								</foreach>
+							</ul>
+							
+							<div class="b-box">
+								<div class="interpret multi-select">
+									<span class="total-text">共</span>
+									<em>{$nums}</em>
+									<span class="total-text" style="margin-right:12px;">件商品</span> 
+									合计:<strong class="price red">￥{$info['total']}</strong>
+								</div>
+								
+							</div>
+							<section class="address noarrow" id="address7" style="background:none; border-bottom:1px solid #e0e0e0; margin-bottom:0">
+								<div class="address-info" id="J_address">
+										<p class="address-name">{$addr['name']}</p>
+										<p class="address-phone">{$addr['mobile']}</p>
+								</div>
+								<div class="address-details">{:str_replace('||',' ', $addr['district'])} {$addr.addr}</div>
+							</section>
+							<div class="b-box">
+								<p class="title">支付方式</p>
+								<div class="interpret multi-select">
+								<if condition="$info['payway'] eq 1">
+									微信支付
+								<else />
+									余额支付
+								</if>
+								</div>
+							</div>
+							<div class="b-box">
+								<p class="title">订单状态</p>
+								<div class="interpret multi-select">
+									<if condition="$info['status'] gt 2">
+										<div class="wul" onclick="wuliu(this);" _express="{$info['express']}" _expressno="{$info['express_no']}">物流信息</div>
+									</if>	
+									{:get_order_status($info['status'])}
+								</div>
+							</div>
+							<script>
+								function wuliu(ob){
+									var express = $(ob).attr("_express");
+										expressno = $(ob).attr('_expressno');
+									location.href="https://m.kuaidi100.com/index_all.html?type="+express+"&postid="+expressno;
+								}
+							</script>
+							<div class="b-box">
+								<p class="title">留言</p>
+								<div class="interpret multi-select">无 </div>
+							</div>
+							
+						</div>
+					</section>
+				</section>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div style="clear:both;height:2rem"></div>
+<div class="mask" id="loading">
+	<img src="__PUBLIC__/m/images/loading-grey.gif" style="position: fixed;_position:absolute;margin-left:-20px;left:50%;top:45%;">
+</div>
+<include file="include/footer" />
+<script src="__PUBLIC__/m/js/orderDetail.js"></script>
+</body>
+</html>

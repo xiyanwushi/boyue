@@ -1,0 +1,166 @@
+<include file="include/head" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/m/css/buy.css">
+<include file="include/header"  title="订单详情" />
+
+<section class="content" style="margin-bottom:7rem;">
+	<div class="active">
+        <div class="content-buy">
+			<div class="wrap order-buy">
+				<div class="mainCont">
+					<section class="address">
+						<div class="address-info" id="J_address">
+							<p class="address-name">{$addr['name']}</p>
+							<p class="address-phone">{$addr['mobile']}</p>
+						</div>
+						<div class="address-details">
+							<if condition="$addr['is_default'] eq 1"><i class="sitem-tip">默认</i></if>
+							&nbsp;&nbsp;&nbsp;{:str_replace('||',' ', $addr['district'])} 
+						</div>
+					</section>
+					<section class="order " id="order15">
+						<section class="order-info">
+							<div class="order-list">
+								<ul class="order-list-info">
+									<foreach name="list" item="v">
+									<li class="item " id="item14">
+										<div class="itemInfo list-info" id="itemInfo13">
+											<div class="list-img"> 
+												<a><img src="{$v['pic']}"></a>
+											</div>
+											<div class="list-cont">
+												<h5 class="goods-title">{$v['title']}</h5>
+												<p class="godds-specification">运费:{$v['logis_fee']}</p>
+												<if condition="$v['is_zq'] neq 1">
+												<p class="godds-specification">单件最高可抵扣积分:{$v['points']}x{$v['nums']}</p>
+												</if>
+												<div class="itemPay list-price-nums" id="itemPay6">
+													<if condition="$v['is_zq'] neq 1">
+														<p class="price">￥{$v['price']+($v['points']*$_site['points_rate']/100)}</p>
+													<else />
+														<p class="price">∮{$v['zq_points']}</p>
+													</if>
+													<p class="nums">x{$v['nums']}</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									</foreach>
+								</ul>
+								<a class="dgscp-c" href="">
+									<img src="__PUBLIC__/m/images/tthh30.png" style="width: 100%;">
+								</a>
+
+								<div class="deliveryMethod" style="margin:16px 0px 10px 0px;font-size:.7em">
+									<div style="width:182px;position: relative;">									
+									支付方式
+										<select name="payway" id="payway" class="payway">	
+											<option value="">请选择</option>
+											<option value="1">微信支付</option>
+											<option value="2">余额支付</option>
+										</select>
+										<img src="__PUBLIC__/m/images/arrow_down.png" style="position: absolute;top: 18%;right: 25px;" />
+									</div>
+								</div>
+								<div class="memo " id="memo9">
+									<div class="inputs">
+										<input type="text" class="c-inputs c-form-txt-normal" maxlength="200" name="msg" id="msg" value="" placeholder="备注留言">
+									</div>
+								</div>
+								<div class="orderPay " id="orderPay10">
+									<div class="subtotal"> 
+										<span class="total-text">共</span> 
+										<em>{$nums}</em> 
+										<span class="total-text" style="margin-right:12px;">件商品</span> 
+										运费:<strong class="price">￥{$logis_fee}</strong>
+										商品合计:<strong class="price">￥{$total}</strong> 
+									</div>
+								</div>
+							</div>
+						</section>
+					</section>
+					<section class="bottom-bar">
+						<div class="total-price">
+							<div>
+								<p class="submitOrder">
+									<button class="c-order-btn  J_submit" onclick="submitOrder();">确认</button>
+								</p>
+								<p class="realPay " id="realPay8">
+									
+									积分:<span id="points" _value="{$points}" class="price">￥{$points}</span> 
+									RMB:<strong class="price" id="needPayAmountSpan">￥{$total+$logis_fee}(含运费)</strong> 
+								</p> 
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+     </div>  
+</section>
+<div style="clear:both;height:2rem;"></div>
+<script>
+	$(function(){
+		$('html').css('font-size','14px');
+	});
+	var addr = "{$_GET['addr']}";
+		cids = "{$_GET['cids']}";
+		money = "{$user['money']}";
+		cx_points = "{$user['cx_points']}";
+		points = "{$user['points']}";
+		
+	//提交订单
+	function submitOrder(){
+		if(cids && addr){
+			var way = $('#payway option:selected').val();
+			if(!way || way==''){
+				layer.msg('请选择支付方式');
+				return false;
+			}
+			var need_points = $('#points').attr("_value");
+			var need_money = $('#price').attr("_value");
+			var msg = '';
+			if(parseFloat(money) < parseFloat(need_money) && way == "2"){
+				msg = '余额不足,抵扣后将以微信支付结算,是否继续？';
+			}
+			if( parseFloat(cx_points) < parseFloat(need_points) && parseFloat(points) >= parseFloat(need_points) ){
+				msg = '重销积分不足,以自有积分进行抵扣,是否继续？';
+			}
+			if( parseFloat(cx_points) < parseFloat(need_points) && parseFloat(points) < parseFloat(need_points) ){
+				if(way == "2"){
+					msg = '重销积分和自有积分不足,将以余额抵扣,是否继续？'
+				}else{
+					msg = '重销积分和自有积分不足,将以微信支付结算,是否继续？'
+				}
+			}
+			
+			var data = {cids:cids,addr:addr,msg:$('#msg').val(),payway:way}
+			if(msg!=''){
+				layer.confirm(msg, {btn: ['继续结算','再看看']}, function(){
+					ajax(data);
+				});
+			}else{
+				ajax(data);
+			}	
+		}
+	}
+	
+	function ajax(data){
+		$.post("/index.php?m=&c=Ajax&a=createOrder",data,function(d){
+			if(d){
+				console.log(d);
+				if(d.status){
+					if(d.url){
+						location.href=d.url;
+					}
+				}else{
+					layer.msg(d.info,{icon:5});
+				}
+			}else{
+				layer.msg('网络异常',{icon:5});
+			}	
+		});
+	}
+</script>
+<script src="__PUBLIC__/m/js/order.js"></script>
+</body>
+</html>

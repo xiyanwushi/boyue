@@ -1,0 +1,52 @@
+
+        <div class="pageheader notab">
+            <h1 class="pagetitle">角色管理</h1>
+            <span class="pagedesc">对角色进行增加，修改或者删除等操作</span>
+        </div><!--pageheader-->
+        <!--script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script-->
+        <script type="text/javascript" src="__PUBLIC__/js/public-jq.js"></script>
+       
+        <div id="contentwrapper" class="contentwrapper lineheight21">
+			<div class="tableoptions">                    
+				<button class="radius3" onclick="location.href='{:U('edit')}'">添加角色</button>
+			</div><!--tableoptions-->
+			<form action="{:U('del')}" method="post" id='productForm'>
+				<table cellpadding="0" cellspacing="0" border="0" id="table2" class="stdtable stdtablecb">
+					<thead>
+						<tr>
+							<th class="head1">角色名</th>
+							<th class="head0">排序</th>
+							<th class="head0">状态</th>
+							<th class="head0">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+					<volist name="list" id="vo">
+						<tr>
+							<td>{$vo.name}</td>
+							<td>{$vo.sort}</td>
+							<td><if condition="$vo['status']">启用<else />禁用</if></td>
+							<td class="center">
+								<if condition="$vo['status']">
+									<a href="{:U('update',array('id'=>$vo['id'],'status'=>0))}">禁用</a> | 
+								<else />
+									<a href="{:U('update',array('id'=>$vo['id'],'status'=>1))}">启用</a> | 
+								</if>
+								<a href="{:U('role', 'id='.$vo['id'])}">配置权限</a> | 
+								<a href="{:U('edit', 'id='.$vo['id'])}">修改</a> | 
+								<a href="{:U('del', 'id='.$vo['id'])}" onclick="return confirm('你确实要删除这个角色吗？')">删除</a>
+							</td>
+						</tr>
+					</volist>
+					<empty  name="list">
+					<tr>
+						<td colspan="5">暂时没有商品</td>
+					</tr>
+					</empty>
+					</tbody>
+				</table>
+			</form>
+			<div class="dataTables_paginate paging_full_numbers" id="dyntable2_paginate">{$page}</div>
+        
+        </div><!--contentwrapper-->
+        

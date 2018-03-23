@@ -1,0 +1,224 @@
+		<script src="__PUBLIC__/plugins/My97DatePicker/WdatePicker.js"></script>
+        <div class="pageheader notab">
+            <h1 class="pagetitle">用户管理</h1>
+            <span class="pagedesc">管理商城中的用户信息</span>
+            
+        </div><!--pageheader-->
+		<style>
+			.btn{
+				display:block;
+				border-radius:2px;
+				position:absolute;
+				right:2px;
+				width:60px;
+				height:20px;
+				line-height:20px;
+				text-align:center;
+				background-image:url()!important;
+				
+			}
+		</style>
+        <div id="contentwrapper" class="contentwrapper lineheight21">
+			<div class="tableoptions">        
+				<form method="post">
+					等级:
+					<select name="level" default="{$_GET['level']}" style="width:90px; min-width:0;">
+						<option value="">全部</option>
+						<volist name="_CFG['level']" id="vo">
+						<option value="{$key}">{$vo.name}</option>
+						</volist>
+					</select>
+					编号:
+					<input type="text" name="id" value="{$_GET['id']}" class="smallinput" style="width:100px;" />
+					<input type="submit" value="查找" />
+				</form>
+			</div><!--tableoptions-->
+			<table cellpadding="0" cellspacing="0" border="0" id="table2" class="stdtable stdtablecb">
+				<thead>
+					<tr>
+						<th class="head1">
+							<a href="<?php if($_GET['order'] == 'id' && $_GET['type'] == 'desc'){
+								echo U('index?order=id&type=asc');
+							}else{
+								echo U('index?order=id&type=desc');
+							}?>">
+							编号
+							<?php if($_GET['order'] == 'id' && $_GET['type'] == 'desc')echo '↑';else echo '↓';?>
+							</a>
+						</th>
+						<th class="head1">头像</th>
+						<th class="head0">昵称</th>
+						<th class="head1">等级</th>
+						<th class="head1">推荐人ID</th>
+						<th class="head0" width="150">
+							账户余额
+						</th>
+						<th class="head0" width="150">
+							账户{$_site['points_name']}
+						</th>
+						<th class="head0" width="150">
+							重销{$_site['points_name']}
+						</th>
+						<th class="head0" width="150">
+							冻结积分
+						</th>
+						<th class="head0">
+							<a href="<?php if($_GET['order'] == 'agent1' && $_GET['type'] == 'desc'){
+								echo U('index?order=agent1&type=asc');
+							}else{
+								echo U('index?order=agent1&type=desc');
+							}?>">
+							一级下线数
+							<?php if($_GET['order'] == 'agent1' && $_GET['type'] == 'desc')echo '↑';else echo '↓';?>
+							</a>
+						</th>
+						<!--<th class="head0">
+							<a href="<?php if($_GET['order'] == 'agent2' && $_GET['type'] == 'desc'){
+								echo U('index?order=agent2&type=asc');
+							}else{
+								echo U('index?order=agent2&type=desc');
+							}?>">
+							二级下线数
+							<?php if($_GET['order'] == 'agent2' && $_GET['type'] == 'desc')echo '↑';else echo '↓';?>
+							</a>
+						</th>
+						<th class="head0">
+							<a href="<?php if($_GET['order'] == 'agent3' && $_GET['type'] == 'desc'){
+								echo U('index?order=agent3&type=asc');
+							}else{
+								echo U('index?order=agent3&type=desc');
+							}?>">
+							三级下线数
+							<?php if($_GET['order'] == 'agent3' && $_GET['type'] == 'desc')echo '↑';else echo '↓';?>
+							</a>
+						</th>-->
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<volist name="list" id="vo">
+					<tr>
+						<td>{$vo.id}</td>
+						<td><img src="{$vo.headimg}" style="width:50px; height:50px; border-radius:25px;" /></td>
+						<td>{$vo.nickname}</td>
+						<td>{$_CFG['level'][$vo['level']]['name']}</td>
+						<td>{$vo.parent1}</td>
+						<td style="position:relative">{$vo.money}<a href="javascript:;" class="btn" onclick="showPs({$vo['id']});">充值金额</a></td>
+						<td style="position:relative">{$vo.points}<a href="javascript:;" class="btn" onclick="showPss({$vo['id']});">充值{$_site['points_name']}</a></td>
+						<td style="position:relative">{$vo.cx_points}<a href="javascript:;" class="btn" onclick="showPsss({$vo['id']});">充值重销</a></td>
+						<td style="position:relative">{$vo.frozen}</td>
+						<td>{$vo.agent1}</td>
+						<!--<td>{$vo.agent2}</td>
+						<td>{$vo.agent3}</td>-->
+						<td>
+							<a href="{:U('detail?id='.$vo['id'])}">详细信息</a>	|
+							<a href="javascript:;" onclick="editParent({$vo['id']})">修改上级</a>	
+						</td>
+					</tr>
+					</volist>
+				</tbody>
+			</table>
+			<div class="dataTables_paginate paging_full_numbers" id="dyntable2_paginate">
+			{$page|default="<p style='text-align:center'>暂时没有数据</p>"}
+			</div>
+        
+        </div><!--contentwrapper-->
+		
+		<div id="loading" style="width: 100%;height: 100%;position: fixed;top: 0;left: 0;display:none;z-index: 9999;">
+			<div class="load-b" style="width: 100%;height: 100%;position: absolute;background: #000;opacity: 0.8;z-index: 9999999;"></div>
+			<img src="__PUBLIC__/images/loading-2.jpg" style="width: 50px;left: 48%;top: 40%;position: absolute;z-index: 9999999;" />
+		</div>
+		
+		<link rel="stylesheet" href="__PUBLIC__/layer/skin/default/layer.css?v=140b">
+		<script src="__PUBLIC__/layer/layer.js"></script>
+		<script>
+			var $ = jQuery;
+			function showPs(userid){
+				layer.prompt({title:'请输入您要充值金额'},function(val, index){
+					if(val == ''){
+						layer.msg('请输入您要充值金额');
+						return;
+					}
+					
+					$.post("{:U('setMoney')}",{money:val,user_id:userid},function(d){
+						if(d){
+							layer.msg(d.info, {icon: 6});
+							 setTimeout(function(){
+								layer.close(index);
+								location.reload();
+							 }, 2000);
+						}else{
+							layer.msg('网络异常');
+						}
+					});
+					layer.close(index);
+				});
+			}
+			
+			function showPss(userid){
+				layer.prompt({title:'请输入您要充值积分'},function(val, index){
+					if(val == ''){
+						layer.msg('请输入您要充值积分');
+						return;
+					}
+					
+					$.post("{:U('setPoints')}",{points:val,user_id:userid},function(d){
+						if(d){
+							console.log(d);
+							layer.msg(d.info, {icon: 6});
+							 setTimeout(function(){
+								layer.close(index);
+								location.reload();
+							 }, 2000);
+						}else{
+							layer.msg('网络异常');
+						}
+					});
+					layer.close(index);
+				});
+			}
+			function showPsss(userid){
+				layer.prompt({title:'请输入您要充值积分'},function(val, index){
+					if(val == ''){
+						layer.msg('请输入您要充值积分');
+						return;
+					}
+					
+					$.post("{:U('setcx_Points')}",{cx_points:val,user_id:userid},function(d){
+						if(d){
+							console.log(d);
+							layer.msg(d.info, {icon: 6});
+							 setTimeout(function(){
+								layer.close(index);
+								location.reload();
+							 }, 2000);
+						}else{
+							layer.msg('网络异常');
+						}
+					});
+					layer.close(index);
+				});
+			}
+
+			function editParent(userid){
+				layer.confirm("修改上级会影响所有下级的上级，是否继续修改？",function(){
+					layer.prompt({title:'请输入上级用户ID'},function(val, index){
+						layer.closeAll();
+						$('#loading').show();
+						$.post("{:U('User/editParent')}",{"user_id":userid,"parent":val},function(d){
+							if(d){
+								console.log(d);
+								$('#loading').hide();
+								layer.msg(d.info,{icon:6},function(){
+									location.reload();
+								});
+							}else{
+								layer.msg('请求失败');
+							}
+						})
+						
+					});
+				});
+			}
+			
+		</script>

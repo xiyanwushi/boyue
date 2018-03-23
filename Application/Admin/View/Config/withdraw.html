@@ -1,0 +1,73 @@
+
+        <div class="pageheader notab">
+            <h1 class="pagetitle">提现设置</h1>
+            <span class="pagedesc">设置网站的提现设置</span>
+            
+        </div><!--pageheader-->
+        
+        <div id="contentwrapper" class="contentwrapper lineheight21">
+        
+        
+            <form class="stdform stdform2" method="post">
+				<p>
+					<label>提现方式</label>
+					<span class="field">	
+						<input type="text" style="background:#ddd" readonly value="一键转账(微信企业付款)" class="smallinput" />
+					</span>
+				</p>
+				<!-- <p>
+					<label>提现支持的银行<small>多个用|分开</small></label>
+					<span class="field"><input type="text" name="banks" id="banks" value="{$_CFG.withdraw.banks}" class="smallinput" /></span>
+				</p> -->
+				<p style="background: #ddd;padding: 5px 10px 5px 10px;font-size: 14px;font-weight: bold;">
+					余额提现设置
+				</p>
+				<p>
+					<label>满多少余额方可提现<small></small></label>
+					<span class="field"><input type="text" name="money_ext" id="money_ext" value="{$_CFG.withdraw.money_ext}" class="smallinput" /></span>
+				</p>
+				<p>
+					<label>余额最低提现倍数<small>以某个值的倍数进行提现</small></label>
+					<span class="field"><input type="text" name="money_per" id="money_per" value="{$_CFG.withdraw.money_per}" class="smallinput" /></span>
+				</p>
+				<p>
+					<label>余额提现手续费百分比<small>按照提现的金额的比例</small></label>
+					<span class="field"><input type="text" name="money_lv" id="money_lv" value="{$_CFG.withdraw.money_lv}" class="smallinput" /></span>
+				</p>
+				<p>
+					<label>余额提现手续费最大收取<small>收取提现的金额</small></label>
+					<span class="field"><input type="text" name="money_max" id="money_max" value="{$_CFG.withdraw.money_max}" class="smallinput" /></span>
+				</p>
+				
+				<p style="background: #ddd;padding: 5px 10px 5px 10px;font-size: 14px;font-weight: bold;">
+					积分提现设置
+				</p>
+				<p>
+					<label>满多少积分方可提现<small></small></label>
+					<span class="field"><input type="text" name="points_ext" id="points_ext" value="{$_CFG.withdraw.points_ext}" class="smallinput" /></span>
+				</p>
+				<p>
+					<label>积分最低提现倍数<small>以某个值的倍数进行提现</small></label>
+					<span class="field"><input type="text" name="points_per" id="points_per" value="{$_CFG.withdraw.points_per}" class="smallinput" /></span>
+				</p>
+				<p>
+					<label>积分提现手续费百分比<small>按照提现的积分的比例</small></label>
+					<span class="field"><input type="text" name="points_lv" id="points_lv" value="{$_CFG.withdraw.points_lv}" class="smallinput" /></span>
+				</p>
+				<p>
+					<label>积分提现手续费最大收取<small>收取提现的积分</small></label>
+					<span class="field"><input type="text" name="points_max" id="points_max" value="{$_CFG.withdraw.points_max}" class="smallinput" /></span>
+				</p>
+				<p>
+					<label>提现积分进入重销比例<small>按照提现的积分的比例</small></label>
+					<span class="field"><input type="text" name="points_cx_lv" id="points_cx_lv" value="{$_CFG.withdraw.points_cx_lv}" class="smallinput" /></span>
+				</p>
+				<p class="stdformbutton">
+					<button class="submit radius2">提交</button>
+					<input type="reset" class="reset radius2" value="重置" />
+				</p>
+			</form>
+        
+        
+        </div><!--contentwrapper-->
+        

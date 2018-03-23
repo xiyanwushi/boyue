@@ -1,0 +1,40 @@
+<div class="popable" id="userComment" style="position: fixed;width: 100%;height: 100%;top: 0%;display: -webkit-box;left: 0%;z-index: 999999;line-height: 20px;background: #fff;overflow-y: scroll;padding: 10px;font-size: 0.8em;display:none;">
+	<a href="javascript:$('#userComment').hide();" style="position: fixed;right: 20px;top: 10px;">X</a>
+	<div class="popableInner">
+		<div class="clearfix">
+			<span class="left" style="float: left;">商品质量评分：</span>
+			<ul id="score_rep" class="rating left star5" style="float: left;" onmouseout="onStar(this);">
+				<li class="one"><a title="1分" name="point"   onclick="onstarclick(this);" onmouseover="onStar(this);">1</a></li>
+				<li class="two"><a title="2分" name="point"   onclick="onstarclick(this);" onmouseover="onStar(this);">2</a></li>
+				<li class="three"><a title="3分" name="point" onclick="onstarclick(this);" onmouseover="onStar(this);">3</a></li>
+				<li class="four"><a title="4分" name="point"  onclick="onstarclick(this);" onmouseover="onStar(this);">4</a></li>
+				<li class="five"><a title="5分" name="point"  onclick="onstarclick(this);" onmouseover="onStar(this);">5</a></li>
+			</ul> 
+			<input id="score" name="score" type="hidden" value="5"><br>			
+		</div>
+		<div style="height:10px"></div>
+		<textarea id="content" cols="20" rows="5" class="w400" maxlength="150" style="width: 100%;border: 1px solid #999;display: -webkit-box;margin: 15px auto;"></textarea>
+		<div class="clearfix">
+			<p class="faceTittle" onclick="comment();" style="text-align: center;width:100%;background: #9b0001;padding: 2px;">
+				<a href="javascript:;" class="bluesbtn right" style="color:#fff;font-size:15px;">
+					发表评论
+				</a>
+			</p>				 
+			<p class="faceTittle" onclick="javascript:$('#userComment').hide();" style="text-align: center;width:100%;background: #999;padding: 2px;margin: 10px 0;">
+				<a class="closeWin closepop1" style="color:#fff;font-size:15px;">取消评论</a>
+			</p>
+			<span class="gray2" style="font-size:14px;"> 字数不超过150个字符 </span>
+		</div>
+		<input type="hidden" id="txtOrderId" value="0">
+		<input type="hidden" id="txtProId" value="1751">
+		<input type="hidden" id="txtOrderCode" value="">
+		<ul style="margin:0; padding:0;font-size: 12px;">
+			<li><strong>在您发表评论之前，请注意以下几点 </strong></li>
+			<li>1、不仅评价商品的好或不好，更重要的是阐述自己的观点和理由以帮助其他客户判断商品是否适合自己。 </li>
+			<li>2、我们鼓励您的原创评论，未经授权的文字请勿转载。 </li>
+			<li>3、有关订单和送货等购物过程的问题，请查看帮助中心，或者联系客服。 </li>
+			<li>4、不得发表违反国家相关法律的言论。 </li>
+			<li>5、管理员有权删除违反上述要求的内容。 </li>
+		</ul>
+	</div>
+</div>

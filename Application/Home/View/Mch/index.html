@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no, address=no">
+<title>{$_site['name']}</title>
+<link href="__PUBLIC__/m/css/newall.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/app.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/font.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/m/css/mch.css">
+<link href="__PUBLIC__/layer/skin/layer.css" rel="stylesheet" type="text/css">
+<link href="__PUBLIC__/css/mobiscroll.css" rel="stylesheet" type="text/css">
+<script src="__PUBLIC__/js/jquery-1.7.min.js"></script>
+<script src="__PUBLIC__/js/mobiscroll.js" charset="utf-8" type="text/javascript"></script>
+<script src="__PUBLIC__/layer/layer.js"></script>
+
+</head>
+<body bgcolor="#f2f2f2">
+	<div class="agent-money clr">
+		<dl>
+			<dt>
+				<span>分销团队{$_site['points_name']}：{$points|default="0.00"}元</span>
+				<i class="iconfont icon-right" style="float: right;"></i>
+			</dt>
+			<dd style="margin:-32px 0">
+				<p>预收{$_site['points_name']}：{$yj_points|default="0.00"}元</p>
+			</dd>
+			<dd style="margin:-32px 0">
+				<p>代理级别：{$_level[$user['level']]['name']}</p>
+			</dd>
+			<dd><p>可提现（元）</p></dd>
+			<dd class="clr"><b>{$user['money']}</b><button onclick="window.location.href=&#39;{:U('My/money')}&#39;">提现</button></dd>
+		</dl>
+		
+	</div>
+	<div class="agent-list clr">
+		<ul>
+			<li onclick="window.location.href=&#39;{:U('Mch/money',array('type'=>1))}&#39;">
+				<span class="zero"><i class="iconfont icon-jifen"></i></span>
+				<p>分销明细</p>
+				<span>{$points1|default="0.00"}</span>元
+			</li>
+			<li onclick="window.location.href=&#39;{:U('Mch/money',array('type'=>2))}&#39;">
+				<span class="zero"><i class="iconfont icon-jifen"></i></span>
+				<p>团队明细</p>
+				<span>{$points2|default="0.00"}</span>元
+			</li>
+			<li onclick="window.location.href=&#39;{:U('My/team')}&#39;">
+				<span class="zero"><i class="iconfont icon-team"></i></span>
+				<p>团队有效代理</p>
+				<span>{$son}</span>人
+			</li>
+			
+			<li onclick="window.location.href=&#39;{:U('Mch/order')}&#39;">
+				<span class="zero"><i class="iconfont icon-dodeparent"></i></span>
+				<p>商户订单</p>
+
+			</li>
+			<li onclick="$('#OutOf').toggle();">
+				<span class="zero"><i class="iconfont icon-community"></i></span>
+				<p>温馨提示</p>				
+			</li>
+			<li onclick="window.location.href=&#39;{:U('Mch/xy')}&#39;">
+				<span class="zero"><i class="iconfont icon-iconfontbangzhu"></i></span>
+				<p><if condition="$user['ismch'] neq 0">商户资料<else />申请商户</if></p>				
+			</li>
+		</ul>
+	</div>
+<div class="coverBG3" id="OutOf" style="display: none;" style="z-index:9999">
+<div class="coverBG3" style="z-index:99">
+	<ul class="cover2">
+		<li class="coverCon">
+			<div class="coverConBanzhang">
+				<img class="coverConBanzhangClose" src="__PUBLIC__/m/images/close2.png" onclick="$('#OutOf').toggle();">
+				<p class="coverConBanzhangTitle"><b>温馨提示</b></p>
+				<div class="coverConBanzhangCon">
+					<p>1.商户可在电脑端输入http://{$_SERVER['SERVER_NAME']}/mch.php进入电脑端商户后台</p>
+						
+					<p>2.商户在电脑端输入网址后，需用本商户的微信扫码进入商户后台</p>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+</div>	
+
+<div id="backtop"><i class="iconfont icon-fold"></i></div>
+<include file="include/footer" />

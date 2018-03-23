@@ -1,0 +1,57 @@
+<style>	
+	.upload{position:relative;height: 100px; width: 100px;float: left;margin-left: 10px;}
+	.img,.file{position:absolute;width:100px;height:100px;}
+	.file{ z-index:888; opacity:0;}
+</style>
+<div class="upload">
+	<input type="file" onchange="upload(this)" class="file" />
+	<img src="__PUBLIC__/images/upload.jpg" class="img" />
+</div>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/layer/skin/layer.css" />
+<script src="__PUBLIC__/layer/layer.js"></script>
+<script src="__PUBLIC__/js/lrz.mobile.min.js"></script>
+<script>
+	var $ = jQuery;
+	var status = "[status]";
+	var string = [];
+	function upload(obj){
+		//上传图片至服务器
+		var inputHide = $(obj.parentElement.parentElement).find("input[type=hidden]");
+		lrz(obj.files[0], {
+			done: function (results) {
+				  // 你需要的数据都在这里，可以以字符串的形式传送base64给服务端转存为图片。
+				  $.post("{:U('Admin/upload_64')}",
+						  {img:results.base64,size:results.base64.length},function(data){
+					  if(data.status){
+						  $(obj.parentElement).find('img').attr('src',data.info);
+						  if(status != "1"){
+							inputHide.val(data.info);
+						  }else{
+							string.push(data.info);
+							inputHide.val(string.join("|"));
+						  }
+						  
+					  }else{
+						  alert(data.info);
+					  }
+				  });
+			}
+		});
+		
+		if(status == "1"){
+			layer.confirm('继续添加图片', {btn: ['是','否']}, 
+				function(){
+					layer.closeAll();
+					var par = $(obj.parentElement).clone();
+					par.find('img').attr('src','./Public/images/upload.jpg');
+					$(obj.parentElement.parentElement).append(par);
+					
+				}, 
+				function(){
+					layer.closeAll();
+				}
+			);
+			
+		}
+	}
+</script>

@@ -1,0 +1,72 @@
+<include file="include/head" />
+<link href="__PUBLIC__/m/css/iscroll.css" rel="stylesheet" type="text/css">
+<link href="__PUBLIC__/m/css/record.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__PUBLIC__/m/js/iscroll.js"></script>
+<include file="include/header" title="我的账户" />
+<style>
+#wrapper {
+    top: 154px!important;
+	margin-bottom:50px;
+.sep{
+	margin: 0 auto;
+    display: block;
+    width: 150px;
+    height: 22px;
+    background: #FF9;
+    margin-top: 3px;
+    line-height: 22px;
+    color: #c40001;
+    border-radius: 5px;
+    text-align: center;
+	font-size: 12px;
+</style>
+<div style="display: block;margin-top: 44px;" class="landscape">
+	<div class="main">
+	    <div class="mb-os">
+	    	<ul>
+				<li style="line-height:22px;height:80px;background: #c40001;text-align: left;padding-left: 5px;color:#fff;border-bottom: 1px solid #A96C6C;margin-top:10px;">
+					<div style="width:65%;float:left;margin-top:7px;margin-left:5px;">
+						余额规则说明：满{$_withdraw['money_ext']}方可提现且必须{$_withdraw['money_per']}的整数倍，
+						提现手续费{$_withdraw['money_lv']}%，最高手续费为：{$_withdraw['money_max']}
+					</div>
+					<div style="float:left;width:30%">
+						<a href="{:U('My/recharge')}"  class="w-btn">余额充值</a>
+						<a href="javascript:;" onclick="withdraw(1);" class="w-btn">余额提现</a>
+						<!--<a href="javascript:;" onclick="$('.popup').toggle();" class="w-btn">积分转让</a>-->
+					</div>
+				</li>
+	       		<li style="line-height: 30px;background: #c40001;text-align: left;padding-left: 5px;color:#fff">
+	       			<table width=100%>
+						<tr align="center">
+							<th width=50%>共有余额:&nbsp; &nbsp;  <b style="font-size:1.8em; color:#FC3">{$user['money']}</b>&nbsp;元 </th>
+							<th>可提现:&nbsp; &nbsp; <b style="font-size:1.8em;color:#FC3">¥{$user['money']}</b>&nbsp;元</th>
+						</tr>
+					</table>
+	       		</li>
+			</ul>
+	    </div>
+     	<div class="c-clild">
+			<div class="mainCont">
+				<div id="wrapper" style="overflow: hidden; left: 0px;">
+					<div id="scroller" style="transform-origin: 0px 0px 0px; position: absolute; top: 0px; left: 0px;">
+						<ul class="rd">
+							
+						</ul>
+						<div class="more"><i class="pull_icon"></i><span>上拉加载...</span></div>
+					</div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<!--  -->
+<div class="mask" id="loading"><img src="__PUBLIC__/m/images/loading-grey.gif" style="position: fixed;_position:absolute;margin-left:-20px;left:50%;top:45%;"></div>
+<include file="include/footer" />
+<script>
+	var type = 'money';
+</script>
+<script type="text/javascript" src="__PUBLIC__/m/js/record.js"></script>
+</body>
+</html>

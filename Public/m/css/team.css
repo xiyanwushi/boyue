@@ -1,0 +1,126 @@
+.cover-info {
+	background-color: #fff;
+	margin: 0 auto;
+}
+.mjd-header {
+	width: 100%;
+}
+.new-search-tab {
+    position: relative;
+    height: 1.8rem;
+    font-size: 0;
+    width: 100%;
+    background-color: #fff;
+    top: 2px;
+}
+.new-change-eleven {
+	width: 33.33%;
+	border-right: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: inline-block;
+	font-size: .875rem;
+	text-align: center;
+	line-height: 1.8rem;
+}
+.bdr-bom:after {
+	background-color: #bfbfbf;
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	width: 200%;
+	height: 1px;
+	content: '';
+	-moz-transform: scale(.5, .5);
+	-ms-transform: scale(.5, .5);
+	-webkit-transform: scale(.5, .5);	
+	transform: scale(.5, .5);
+	-moz-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0
+}
+.new-change-eleven span {
+    color: #232326;
+    display: block;
+    font-size: .55555rem;
+}
+.active span {background:#E4B424;color:#fff}
+.active span a{background:#E4B424;color:#fff}
+.header-title {font-weight:bold}
+
+.mb-ol li{position:relative}
+.headimg {
+    position: absolute;
+    overflow: hidden;
+    top: 0px;
+    left: 5px;
+}
+.headimg img {
+    width: 60px;
+    height: 60px;
+    display: block;
+    border-radius: 5px;
+}
+.tboxR {
+    padding-left: 70px;
+    padding: 5px 0px 15px 75px;
+    border-bottom: solid 1px #cccccc;
+}
+.fl{float:left}
+.fr{float:right}
+.BoxRTop {
+	margin-left: 5px;
+}
+.BoxRTopStep2 {
+    display: inline-block;
+    padding: 2px 4px;
+    background: #f4b42c;
+    color: #fff;
+	border-radius: 3px;
+}
+.BoxRTop span {
+    font-size: 13px;
+}
+.clearfix {
+    clear: both;
+    float: none;
+}
+.BoxRMid {
+    font-size: 13px;
+    color: #999;
+    margin-top: 7px;
+}
+.BoxRBtm {
+    color: #999;
+    font-size: 12px;
+    margin-top: 6px;
+}
+.BoxRBtmR {
+    color: #999;
+    font-size: 13px;
+}
+.BoxRBtmR  img{
+    width: 16px;
+    vertical-align: middle;
+}
+.BoxRBtm  img{
+    width: 16px;
+    vertical-align: middle;
+}
+.ListNumber {
+    background: #f3f3f3;
+    border-top: solid 1px #dadada;
+    border-bottom: solid 1px #dadada;
+    padding: 8px 10px;
+    font-size: 13px;
+    color: #999;
+}
+.ListNumber span {
+    color: #cc0000;
+}
+
+
+
+

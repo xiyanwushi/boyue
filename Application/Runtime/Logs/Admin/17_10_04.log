@@ -1,0 +1,438 @@
+[ 2017-10-04T10:48:26+08:00 ] 124.160.218.73 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-10-04T10:48:26+08:00 ] 124.160.218.73 /admin.php?m=Admin&c=Index&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: _CFG E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\041185b974292283d2f6098acc3220ec.php 第 7 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-10-04T10:48:29+08:00 ] 124.160.218.73 /admin.php?m=Admin&c=Index&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dd_admin` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_admin` WHERE `name` = 'LYKJadmin' AND `pass` = '415fd5d6057d53439bc19800f04a424c' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2017-10-04T10:48:29+08:00 ] 124.160.218.73 /admin.php?m=Admin&c=Admin&a=welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_role` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_menu` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_menu` WHERE `status` = 1 AND `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','42','43','44','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','45') ORDER BY sort desc,id asc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: info E:\phpStudy\WWW\0601\Application\Admin\Controller\AdminController.class.php 第 45 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3fa9f2e830eaac62a7df4990979ab90d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3fa9f2e830eaac62a7df4990979ab90d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3fa9f2e830eaac62a7df4990979ab90d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3fa9f2e830eaac62a7df4990979ab90d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3fa9f2e830eaac62a7df4990979ab90d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3fa9f2e830eaac62a7df4990979ab90d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3fa9f2e830eaac62a7df4990979ab90d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3fa9f2e830eaac62a7df4990979ab90d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3fa9f2e830eaac62a7df4990979ab90d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3fa9f2e830eaac62a7df4990979ab90d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3fa9f2e830eaac62a7df4990979ab90d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3fa9f2e830eaac62a7df4990979ab90d.php 第 187 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-10-04T10:48:35+08:00 ] 124.160.218.73 /admin.php?m=Admin&c=Selfmenu&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_role` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_menu` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_menu` WHERE `status` = 1 AND `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','42','43','44','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','45') ORDER BY sort desc,id asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_selfmenu` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dd_selfmenu` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_selfmenu` ORDER BY sort desc LIMIT 0,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3b0f1cbbd937b273987f39e7813fd3ad.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3b0f1cbbd937b273987f39e7813fd3ad.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3b0f1cbbd937b273987f39e7813fd3ad.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3b0f1cbbd937b273987f39e7813fd3ad.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3b0f1cbbd937b273987f39e7813fd3ad.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3b0f1cbbd937b273987f39e7813fd3ad.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3b0f1cbbd937b273987f39e7813fd3ad.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3b0f1cbbd937b273987f39e7813fd3ad.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3b0f1cbbd937b273987f39e7813fd3ad.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3b0f1cbbd937b273987f39e7813fd3ad.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3b0f1cbbd937b273987f39e7813fd3ad.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\3b0f1cbbd937b273987f39e7813fd3ad.php 第 187 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-10-04T10:48:38+08:00 ] 124.160.218.73 /admin.php?m=Admin&c=Reward&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_role` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_menu` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_menu` WHERE `status` = 1 AND `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','42','43','44','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','45') ORDER BY sort desc,id asc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: config E:\phpStudy\WWW\0601\Application\Common\Common\function.php 第 500 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\phpStudy\WWW\0601\Application\Common\Common\function.php 第 500 行.
+SQL: SHOW COLUMNS FROM `dd_reward` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dd_reward` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_reward` ORDER BY id desc LIMIT 0,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 187 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-10-04T10:48:41+08:00 ] 124.160.218.73 /admin.php?m=Admin&c=Reward&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_role` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_menu` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_menu` WHERE `status` = 1 AND `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','42','43','44','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','45') ORDER BY sort desc,id asc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: config E:\phpStudy\WWW\0601\Application\Common\Common\function.php 第 500 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\phpStudy\WWW\0601\Application\Common\Common\function.php 第 500 行.
+SQL: SHOW COLUMNS FROM `dd_reward` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dd_reward` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_reward` ORDER BY id desc LIMIT 0,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\e63d15dfcc9144a88cc5bc290b64e21d.php 第 187 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-10-04T10:48:44+08:00 ] 124.160.218.73 /admin.php?m=Admin&c=Withdraw&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_role` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_menu` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_menu` WHERE `status` = 1 AND `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','42','43','44','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','45') ORDER BY sort desc,id asc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where E:\phpStudy\WWW\0601\Application\Admin\Controller\WithdrawController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `dd_withdraw` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dd_withdraw` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_withdraw` ORDER BY id desc LIMIT 0,25   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: withdraw E:\phpStudy\WWW\0601\Application\Admin\Controller\WithdrawController.class.php 第 28 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Undefined index: status E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 215 行.
+NOTIC: [8] Undefined index: time1 E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 223 行.
+NOTIC: [8] Undefined index: time2 E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 225 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-10-04T10:48:57+08:00 ] 124.160.218.73 /admin.php?m=Admin&c=Withdraw&a=audit&id=14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_role` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `dd_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_menu` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_menu` WHERE `status` = 1 AND `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','42','43','44','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','45') ORDER BY sort desc,id asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_withdraw` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_withdraw` WHERE `id` = 14 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `dd_withdraw` SET `status`='2',`audit_time`='1507085337' WHERE ( id=14 ) [ RunTime:0.0000s ]
+
+[ 2017-10-04T10:48:57+08:00 ] 124.160.218.73 /admin.php?m=Admin&c=Withdraw&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_role` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_menu` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_menu` WHERE `status` = 1 AND `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','42','43','44','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','45') ORDER BY sort desc,id asc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where E:\phpStudy\WWW\0601\Application\Admin\Controller\WithdrawController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `dd_withdraw` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dd_withdraw` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_withdraw` ORDER BY id desc LIMIT 0,25   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: withdraw E:\phpStudy\WWW\0601\Application\Admin\Controller\WithdrawController.class.php 第 28 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Undefined index: status E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 215 行.
+NOTIC: [8] Undefined index: time1 E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 223 行.
+NOTIC: [8] Undefined index: time2 E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 225 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-10-04T10:49:03+08:00 ] 124.160.218.73 /admin.php?m=Admin&c=Finance&a=pay&wid=14&user_id=10001&money=160&remark=%E5%B9%B3%E5%8F%B0%E6%8F%90%E7%8E%B0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_role` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_menu` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_menu` WHERE `status` = 1 AND `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','42','43','44','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','45') ORDER BY sort desc,id asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_withdraw` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_withdraw` WHERE `id` = 14 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\2d9612be11d1b0225fd10a9f496e641d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\2d9612be11d1b0225fd10a9f496e641d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\2d9612be11d1b0225fd10a9f496e641d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\2d9612be11d1b0225fd10a9f496e641d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\2d9612be11d1b0225fd10a9f496e641d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\2d9612be11d1b0225fd10a9f496e641d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\2d9612be11d1b0225fd10a9f496e641d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\2d9612be11d1b0225fd10a9f496e641d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\2d9612be11d1b0225fd10a9f496e641d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\2d9612be11d1b0225fd10a9f496e641d.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\2d9612be11d1b0225fd10a9f496e641d.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\2d9612be11d1b0225fd10a9f496e641d.php 第 187 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-10-04T10:49:09+08:00 ] 124.160.218.73 /admin.php?m=Admin&c=Finance&a=pay&wid=14&user_id=10001&money=160&remark=%E5%B9%B3%E5%8F%B0%E6%8F%90%E7%8E%B0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_role` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_menu` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_menu` WHERE `status` = 1 AND `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','42','43','44','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','45') ORDER BY sort desc,id asc  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_user` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_user` WHERE `id` = 10001 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_withdraw` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_withdraw` WHERE `id` = 14 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_mch_pay` [ RunTime:0.0000s ]
+NOTIC: [8] Undefined offset: 0 E:\phpStudy\WWW\0601\#ThinkPHP\Library\Think\Db\Driver.class.php 第 792 行.
+SQL: INSERT INTO `dd_mch_pay` (`order_id`,`user_id`,`openid`,`nickname`,`money`,`remark`,`status`,`create_time`) VALUES ('100011507085348','10001','oumb6wUcjDdgWAiaKu37UCqzlrls','Kevin','16000','平台提现','1','1507085348') [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 2 for Common\Util\ddwechat::setParam(), called in E:\phpStudy\WWW\0601\Application\Admin\Controller\FinanceController.class.php on line 43 and defined E:\phpStudy\WWW\0601\Application\Common\Util\ddwechat.class.php 第 39 行.
+SQL: UPDATE `dd_mch_pay` SET `status`='2',`msg`='支付成功' WHERE ( id=22 ) [ RunTime:0.0000s ]
+SQL: UPDATE `dd_withdraw` SET `status`='3' WHERE `id` = 14 [ RunTime:0.0000s ]
+SQL: UPDATE `dd_user` SET `cx_points`=cx_points+30 WHERE `id` = 10001 [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_finance_log` [ RunTime:0.0000s ]
+SQL: INSERT INTO `dd_finance_log` (`user_id`,`type`,`value`,`action`,`create_time`) VALUES ('10001','cx_points','+30','14','1507085348') [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-10-04T10:49:10+08:00 ] 124.160.218.73 /admin.php?m=Admin&c=Withdraw&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `dd_config` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_config`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_role` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_role` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `dd_menu` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_menu` WHERE `status` = 1 AND `id` IN ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','42','43','44','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','45') ORDER BY sort desc,id asc  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: where E:\phpStudy\WWW\0601\Application\Admin\Controller\WithdrawController.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `dd_withdraw` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `dd_withdraw` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `dd_withdraw` ORDER BY id desc LIMIT 0,25   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: withdraw E:\phpStudy\WWW\0601\Application\Admin\Controller\WithdrawController.class.php 第 28 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 182 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 187 行.
+NOTIC: [8] Undefined index: status E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 215 行.
+NOTIC: [8] Undefined index: time1 E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 223 行.
+NOTIC: [8] Undefined index: time2 E:\phpStudy\WWW\0601\Application\Runtime\Cache\Admin\74b33de847bcd735284bc178d1224e92.php 第 225 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

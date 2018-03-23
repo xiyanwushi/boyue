@@ -1,0 +1,57 @@
+html{font-size:12px!important}
+.new-search-tab {
+    position: relative;
+    height: 3.4rem;
+    font-size: 0;
+    width: 100%;
+    background-color: #fff;
+}
+#wrapper {
+    top: 85px;
+}
+.new-change-eleven {
+    width: 20%;
+    border-right: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 1.75rem;
+    text-align: center;
+    line-height: 3.4rem;
+}
+.popup {
+	background: rgba(0,0,0,0.7);
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.popup>div input[type=button] {
+
+	border: none;
+	border-radius: 5px;
+	width: 45%;
+	background: #6C8E8B;
+	color: #FFF;
+	margin-top: 10px;
+	height:2.0em;
+}
+.popup>div {
+   width: 80%;
+   background: rgba(255,255,255,0.8);
+   border-radius: 5px;
+   position: fixed;
+  _position:absolute;
+   z-index:1;
+   top: 30%;
+   left: 10%;
+   right: 10%;
+   padding: 20px 10px;
+   text-align: center;
+}
+.put{text-align: center;font-size: 12px;width: 70%;height:30px;border-radius:5px;border:1px solid black;}
+
+.fl{float:left}

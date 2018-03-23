@@ -1,0 +1,47 @@
+
+        <div class="pageheader notab">
+            <h1 class="pagetitle">后台用户设置</h1>
+            <span class="pagedesc">设置您的后台用户角色/密码</span>
+            
+        </div><!--pageheader-->
+        
+        <div id="contentwrapper" class="contentwrapper lineheight21">
+        
+			<div class="tableoptions">                    
+                    <input value="用户列表" type="button" class="radius3" onclick="location.href=&#39;{:U('Config/userlist')}&#39;" />
+                </div><!--tableoptions-->
+            <form class="stdform stdform2" method="post">
+				<p>
+					<label>登录名</label>
+					<span class="field"><input type="text" name="name" id="name" value="{$info['name']}" class="smallinput" /></span>
+				</p>
+				
+				<p>
+					<label>密码<small>留空则表示不修改密码</small></label>
+					<span class="field"><input type="password" name="pass" id="pass" value="" class="smallinput" /></span>
+				</p>
+				<p>
+					<label>确认密码<small>留空则表示不修改密码</small></label>
+					<span class="field"><input type="password" name="pass2" id="pass2" value="" class="smallinput" /></span>
+				</p>
+				<p>
+					<label>所属角色</label>
+					<span class="field">
+						<select name="role_id" default="{$info['role_id']}">
+						<option value="">请选择角色</option>
+						<foreach name="role" item="v">
+						<option value="{$v['id']}">{$v['name']}</option>
+						</foreach>
+						</select>
+					</span>
+				</p>
+				
+				<p class="stdformbutton">
+					<button class="submit radius2">提交</button>
+					<input type="reset" class="reset radius2" value="重置" />
+				</p>
+			</form>
+        
+        
+        </div><!--contentwrapper-->
+        

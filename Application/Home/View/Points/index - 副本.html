@@ -1,0 +1,54 @@
+<include file="include/head" />
+<include file="include/header" title="积分专区" />
+<link rel="stylesheet" href="__PUBLIC__/m/css/points.css">
+<link rel="stylesheet" href="__PUBLIC__/m/css/point.css">
+<div id="h5v0">
+	<div style="position: relative;" id="J_wrapper" class="screen-wrap fullscreen"> 
+	  <div id="J_mainout" class="mainout">
+		   <div id="J_mainstay" class="d-bc">
+				<section id="J_detailCont" class="innercontent">  
+					<div class="mwrap">
+						<div class="mooncakeWrap">
+							<div class="YS2">
+								<ul class="cmszch clearfix">
+									<foreach name="list" item="v">
+									<li>
+										<div class="plr5 hights">
+											<p class="proname">
+												<img class="smallsign xinpin" src="__PUBLIC__/m/images/blank.gif">
+												<strong>{$v['title']}</strong>
+											</p>
+											<p class="dpj">
+												<span class="gray">￥{$v['price']}</span>
+											 </p>
+											 <p class="sjj">
+												<span class="deepRed">
+													∮<font>{$v['zq_points']}</font>
+												</span>
+											 </p>
+											
+											<span class="btntext" onclick="location.href=&#39;{:U('Index/product',array('id'=>$v['id'],'is_zq'=>1))}&#39;">兑换</span>
+											
+											<p></p>
+										</div>
+										<div class="zk"></div>
+										<img class="zhezhao" src="__PUBLIC__/m/images/blank.gif" onclick="location.href=&#39;{:U('Index/product',array('id'=>$v['id'],'is_zq'=>1))}&#39;">
+										<p class="proimg">
+											<a href="{:U('Points/product',array('id'=>$v['id']))}"><img src="{$v['pic']}"  class="cpt lazyimg"></a>
+										</p>
+										<img class="ditu" src="__PUBLIC__/m/images/blank.gif">
+									</li>
+									</foreach>
+									
+								</ul> 
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+<include file="include/footer" />
+</body>
+</html>

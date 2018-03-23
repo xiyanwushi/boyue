@@ -1,0 +1,68 @@
+<include file="include/head" />
+<link href="__PUBLIC__/m/css/iscroll.css" rel="stylesheet" type="text/css">
+<script src="__PUBLIC__/js/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/m/js/iscroll.js"></script>
+<link href="__PUBLIC__/m/css/myOrder.css" rel="stylesheet" type="text/css">
+<link href="__PUBLIC__/m/css/mchorder.css" rel="stylesheet" type="text/css">
+<include file="include/header" title="客户订单"/> 
+<section class="content">
+	<div class="mjd-header cover-info" style="transform: translateY(0px);">
+		<ul class="new-search-tab bdr-bom" id="search-bar">
+			<li class="new-change-eleven active" _status="0">
+				<span>
+					<a href="javascript:;">全部</a>
+				</span>
+			</li>
+			<li class="new-change-eleven" _status="1">
+				<span>
+					<a href="javascript:;">待付款</a>
+				</span>
+			</li>
+			<li class="new-change-eleven" _status="2">
+				<span>
+					<a href="javascript:;">待发货</a>
+				</span>
+			</li>
+			<li class="new-change-eleven" _status="3">
+				<span>
+					<a href="javascript:;">待收货</a>
+				</span>
+			</li>
+			<li class="new-change-eleven" _status="4">
+				<span>
+					<a href="javascript:;">待评价</a>
+				</span>
+			</li>
+		</ul>
+	</div>
+	<div id="wrapper" style="overflow: hidden; left: 0px;">
+		<div id="scroller" style="transform-origin: 0px 0px 0px; position: absolute; top: 0px; left: 0px;">
+			<ul class="moreMessage orderCont mb-ol" id="orderlist"> 
+				
+			</ul>
+			<div class="more"><i class="pull_icon"></i><span>上拉加载...</span></div>
+		</div>
+	</div>
+</section>
+
+<div class="popup" style="display:none">
+	<div>
+		<div class="co-list" style="height:80px;">
+			<div class="col-a" style="height:40px;">
+				<span class="col-span" style="float: left;margin-top: 3%;">快递公司：</span>
+				<input type="text" class="col-aaa fl money put" id="express" value=""  placeholder="输入快递公司">
+			</div>
+			<div class="col-a" style="height:40px;">
+				<span class="col-span" style="float: left;margin-top: 3%;">快递单号：</span>
+				<input type="text" class="col-aaa fl money put" id="express_no" value=""  placeholder="输入快递单号">
+			</div>
+		</div>
+		<input style="background:#FF5722;" value="确定发货" onclick="express();" type="button" />
+		<input class="reset" onclick="pShow()" value="取消" type="button" />
+	</div>
+</div>
+
+<include file="include/footer" />
+<script type="text/javascript" src="__PUBLIC__/m/js/MchOrder.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+
+        <div class="pageheader notab">
+            <h1 class="pagetitle">团队奖设置设置</h1>
+            <span class="pagedesc">设置您的团队奖比例（按照分销奖比例金额的比例）</span>
+            
+        </div><!--pageheader-->
+        
+        <div id="contentwrapper" class="contentwrapper lineheight21">
+			<style>
+				.addbtn{
+					display: block;
+					border: 1px solid #FF5722;
+					width: 80px;
+					text-align: center;
+					height: 20px;
+					border-radius: 3px;
+					line-height: 20px;
+					margin-top: 10px;
+					background: #FF5722;
+					color: #fff;
+				}
+			</style>
+        
+            <form class="stdform stdform2" method="post">
+				<p id="set">
+					<label>选择等级设置比例(单位：百分比)
+						<small>
+							<a href="javascript:;" class="addbtn" onclick="add();">添加等级比例</a>
+							<a href="javascript:;" class="addbtn" onclick="del();">删除等级比例</a>
+						</small>
+					</label>
+					<foreach name="_tward" item="val" key="key">
+						<span class="field">
+						选择等级：
+						<select name="level[]" style="width:150px;min-width:0px;" default="{$key}">
+						<foreach name="_level" item="v" key="k">
+						<option value="{$k}">{$v['name']}</option>
+						</foreach>
+						</select>
+						设置比例：
+						<input type="text" name="rate[]" id="rate" value="{$val}" class="smallinput" style="width:150px;" />
+						</span>'
+					</foreach>
+				</p>
+				<p class="stdformbutton">
+					<button class="submit radius2">提交</button>
+					<input type="reset" class="reset radius2" value="重置" />
+				</p>
+			</form>
+			
+			
+			<script>
+				var $ = jQuery;
+				function add(){
+					html = '<span class="field">'
+						+'选择等级：'
+						+'<select name="level[]" style="width:150px;min-width:0px;">'
+						+'<foreach name="_level" item="v" key="k">'
+						+'<option value="{$k}">{$v['name']}</option>'
+						+'</foreach>'
+						+'</select>'
+						+'设置比例：'
+						+'<input type="text" name="rate[]" id="rate" value="" class="smallinput" style="width:150px;" />'
+						+'</span>'
+					$('#set').append(html);
+				}
+				function del(){
+					var ind = $('#set').find('span').length;
+					$('#set').find('span').eq(ind-1).remove();
+				}
+			</script>
+        
+        </div><!--contentwrapper-->
+        

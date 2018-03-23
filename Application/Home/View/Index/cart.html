@@ -1,0 +1,172 @@
+<include file="include/head" />
+<script>
+var addr = "{$addr}";
+var addr_id = "{$addr['id']}";
+$(function(){
+	if(addr == ''){
+		layer.msg('您还未设置默认收货地址，快去设置吧！',{icon:5},function(){
+			location.href="{:U('My/addr')}&act=select&is_default=1";
+		});
+	}
+});
+</script>
+<link href="__PUBLIC__/m/css/cart.css" rel="stylesheet" type="text/css">
+<include file="include/header" title="购物车" />
+<section class="content" style="margin-top: 42px;">
+	<if condition="$addr">
+	<div class="cart-addr">
+		<a href="{:U('My/addr?act=select')}">
+			<table style="font-size:14px;">
+				<tbody>
+				<tr>
+					<td valign="top" width="50"><b>运至</b></td>
+					<td align="left">
+						{:str_replace('||',' ', $addr['district'])} {$addr.addr}<br/>{$addr.name} {$addr.mobile}								
+						<input id="addr_id" type="hidden" value="8">
+					</td>
+					<td valign="middle"><img src="__PUBLIC__/images/arrow.png" /></span></td>
+				</tr>
+			</tbody></table>
+		</a>
+	</div>
+	<div style="height:10px;background:#f2f2f2;border-bottom: 1px solid #dedede;"></div>
+	</if>
+	<if condition="$list">
+	<div style="display:block">
+		<div class="shop-group">
+			<div class="shop-group-item">
+				<ul class="shp-cart-list">
+					<foreach name="list" item="v">
+					<li>
+						<div class="items">
+							<div class="check-wrapper">
+								<a href="javascript:;" onclick="choose(this);">
+									<input type="checkbox" class="checkbox check-on" _cid="{$v['id']}" />
+								</a>
+								<a href="javascript:;" onclick="DelShow({$v['id']});">
+									<span class="cart-checkbox"></span>
+								</a>
+							</div>
+							<div class="shp-cart-item-core shop-cart-display">
+								<a class="cart-product-cell-1" href="{:U('Index/product',array('id'=>$v['product_id']))}">
+									<img class="cart-photo-thumb" alt="" src="{$v['pic']}" style="opacity: 1;">
+								</a>
+								<div class="cart-product-cell-2 carts">
+									<div class="cart-product-name">
+										<a href="{:U('Index/product',array('id'=>$v['product_id']))}">
+											<span>{$v['title']}</span>
+										</a>
+									</div>
+									<div class="cart-product-prop eles-flex">
+										<span class="prop1 logis">运费:{$v['logis_fee']}</span>
+									</div>
+									<if condition="$v['is_zq'] neq 1">
+									<div class="cart-product-prop eles-flex">
+										<span class="prop1">单件最高可抵扣积分:{$v['points']}</span>
+									</div>
+									</if>
+									<div class="cart-product-cell-3">
+										<if condition="$v['is_zq'] neq 1">
+										<span class="shp-cart-item-price">¥<strong>{$v['price']+($v['points']*$_site['points_rate']/100)}<span style="font-size:10px;">(元)</span></strong></span>
+										<else />
+										<span class="shp-cart-item-price">∮<strong>{$v['zq_points']}<span style="font-size:10px;">({$_site['points_name']})</span></strong></span>
+										</if>
+										<div class="quantity-wrapper customize-qua">
+											<a class="quantity-decrease" href="javascript:;" onclick="setCartNums(1,this,{$v['id']})"></a>
+											<input type="number" size="4" value="{$v['nums']}" class="quantity" onchange="setCartNums(3,this,{$v['id']})">
+											<a class="quantity-increase " href="javascript:;" onclick="setCartNums(2,this,{$v['id']})"></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					</foreach>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<else />
+	<div class="shp-cart-empty" style="display:block" id="empty">
+		<span class="empty-msg">购物车空空如也,赶紧逛逛吧~</span>
+	</div>
+	<div style="height:10px;background:#f2f2f2;border-bottom: 1px solid #dedede;"></div>
+	</if>
+	<!-- 看看热卖 begin -->
+	<if condition="$send">
+	<div class="shopping-guess-container" style="display: block;" id="hot">
+		<div class="shopping-guess">
+			<div class="gray-text">
+				<span class="gray-layout">热卖推荐</span>				
+			</div>
+			<ul class="similar-ul cf" id="items">
+				<foreach name="send" item="v">
+				<li class="similar-li">
+					<a href="{:U('Index/product',array('id'=>$v['id']))}">
+						<div class="similar-product">
+							<img class="Jschangewidth" src="{$v['pic']}" style="opacity: 1;">
+							<span class="similar-product-text">{$v['title']}</span>
+							<span class="similar-product-price">¥
+								<span class="big-price">{$v['price']+($v['points']*$_site['points_rate']/100)}</span>
+								<del>¥{$v['market_price']}</del>
+							</span>
+						</div>
+					</a>
+				</li>
+				</foreach>
+			</ul>
+		</div>
+	</div>
+	</if>
+	<!-- 看看热卖 end -->
+	<!--确定删除提示框-->
+	<div class="cart-pop-floor" style="display:none" id="del">
+		<div class="cart-cover-floor">
+		</div>
+		<div class="cart-info-box" style="margin-left: 28px; margin-top: 238px;">
+			<div class="cart-info-box-content cart-bdb-1px">
+				<span class="cart-info-box-text">确认要删除此商品吗？</span>
+			</div>
+			<div class="cart-btn-box">
+				<a class="cart-btn-box-back"  onclick="$('#del').toggle();">取消</a>
+				<a class="cart-btn-box-check" href="javascript:;" onclick="DelCart()">确定</a>
+			</div>
+		</div>
+	</div>
+	
+	<div style="clear:both"></div>
+	<div class="footer-toolbar">
+		<div class="totalprice">
+			<div class="realPay total-price" id="realPay398">
+				<p class="h" style="color:#846161;font-size:12px;">
+					<span>运费:</span><strong  id="logis_fee"></strong>
+				</p>
+				<p class="attached h" style="font-size:14px; margin-top:2px">
+					{$_site['points_name']}:<span class="red"><strong id="points"></strong></span>&nbsp;&nbsp;
+					RMB:<span class="price"><strong id="total"></strong></span>
+					
+				</p>
+			
+			</div>
+			<div class="btn">
+				<div class="submit " id="submit509">
+					<button class="btn-sub" type="submit" style="background:#fff; border-left:1px solid #e3e3e3; width:40%; color:#666" onclick="delAll();">删除多选</button>
+					<button class="c-btn-orgn btn-sub" type="submit" id="checkout-btn">结算</button>
+				</div>
+			</div>
+			<input class="cartids" type="hidden" name="cart_ids">
+		</div>
+		<div class="realQuantity " id="realQuantity399">
+			<input type="hidden" value="0">
+		</div>
+	</div>
+	
+	<div id="indexToTop" style="display: none; width:42px; position:fixed;bottom:64px; right:20px; z-index:999;">
+		<img src="__PUBLIC__/m/images/scroll-to-top-icon.png" style="width: 100%;">
+	</div>
+
+</section>
+
+<script src="__PUBLIC__/m/js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+html{font-size:10px!important;}
+.c-btn {
+	display: inline-block !important;
+	border-radius: 5px;
+	height: 30px;
+	line-height: 30px;
+	color: #4e4e4e;
+	background-color: #dedede;
+	border: 1px #dedede solid;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	display: inline-block;
+	min-width: 38px;
+	padding: 0 6px;
+	text-align: center;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#ededed));
+}
+
+.c-btn-blue {
+	background: #022046;
+	width: 100%;
+	height: 2em;
+	line-height: 2em;
+	display: block;
+	margin: auto;
+	font-size: 18px;
+	clear: both
+}
+
+.c-list p {
+	color: #aaaaaa;
+	line-height: 1.5em;
+	font-size: 12px;
+	padding: 10px 0;
+	width: 80%
+}
+
+.c-list p b {
+	color: #3d3d3d;
+	font-size: 14px;
+}
+
+.c-list input[type="radio" ] {
+	border: 1px solid #909090;
+	border-radius: 50%;
+	width: 14px;
+	height: 14px;
+	margin: 15px;
+}
+
+.c-list input[type="radio"].on {
+	background: #63738d
+}
+
+.b-box .c-btn-oran{width:50%; margin-top:20px;font-size: .777777rem;border-radius: 3px;}
+.b-box .c-btn-r{width:50%;background: #fff; border:1px solid #e0e0e0; color:#666; margin-top:20px;font-size: 1.45rem;}
+.order-buy .order .b-box {
+    padding: 10px;
+}
+.order-buy .order-info .order-list-info .list-cont .godds-specification {
+    height: 35px;
+    line-height: 16px;
+}
+.order-buy .order-info .order-list-info .list-info .list-img a {
+    max-height: 100px;
+    line-height: 100px;
+    display: block;
+}
+.order-buy .b-box .interpret {
+    -webkit-box-flex: 1;
+    width: 100%;
+    text-align: right;
+    font-size: 12px;
+    color: #999;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.order-buy .order-info {
+    margin-top: 0px;
+}
+input[type="checkbox"]{
+	height: 16px;
+    width: 16px;
+    border: 2px solid #B7A0A0;
+    border-radius: 2px;
+	background-color:#fff;
+}
+.check-on{
+	background: url(../images/yess.png);
+    background-size: 100%;
+}
+
+.cart-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+}
+.cart-checkbox {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    background: url(../images/shoppingcart.png) no-repeat 0px 1px;
+    background-size: 50px 200px;
+	position: absolute;
+    top: 35%;
+    left: 0px;
+}
+
+.popup {
+	background: rgba(0,0,0,0.7);
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.popup>div input[type=button] {
+
+	border: none;
+	border-radius: 5px;
+	width: 45%;
+	background: #6C8E8B;
+	color: #FFF;
+	margin-top: 10px;
+	height:2.0em;
+}
+.popup>div {
+   width: 80%;
+   background: rgba(255,255,255,0.8);
+   border-radius: 5px;
+   position: fixed;
+  _position:absolute;
+   z-index:1;
+   top: 30%;
+   left: 10%;
+   right: 10%;
+   padding: 20px 10px;
+   text-align: center;
+}
+.put{text-align: center;font-size: 12px;width: 70%;height:30px;border-radius:5px;border:1px solid black;}
+select{text-align: center;font-size: 12px;width: 68%;height:30px;border-radius:5px;border:1px solid black;padding-left:2%;}
+.fl{float:left}
